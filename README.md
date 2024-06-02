@@ -1,2 +1,2 @@
 # trustmebro
-clean, expand and join strings
+inspect, clean, expand and join strings
