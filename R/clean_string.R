@@ -1,4 +1,4 @@
-#' clean a string
+#' clean a string 
 #'
 #' @param string a string to be cleared
 #'
