@@ -1,43 +1,55 @@
-#' inspect borhtday and month components of a SGIC
+#' inspect birthday and -month component of a string
 #'
-#' @param code SGIC
-#' @param start start index of birthday and birthmonth
-#' @param end  end index of birthday and birthmonth
+#'@description
+#'This function checks if a substring of a given code represents a valid birthdate in the code
 #'
-#' @return Boolean 
+#' @param code a string containing the SGIC
+#' @param start start position of birthdate-components
+#' @param end end position of birthdate-components
+#'
+#' @return a logical value `TRUE` if the substring represents a valid date, otherwise `FALSE`. 
 #' @export
 #'
 #' @examples
-inspect_birthday <- function(code, start, end) {
-  # zu prüfenden Bereich extrahieren
-  code_snippet <- substr(code, start, end)
+#' inspect_birthdaymonth("DEF2802", 4, 7) # TRUE
+#' inspect_birthdaymonth("GHI3002", 4, 7) # FALSE
+#' 
+inspect_birthdaymonth <- function(code, start, end) {
   
-  # muster suchen
-  pattern <- "\\d{1,2}/\\d{1,2}"  # Format: TT/MM
-  matches <- grepl(pattern, code_snippet)
+  # ist das ein string?
+  if (!is.character(code) | length(code) != 1) {
+    stop("invalid input: code must be a string")
+  }
   
-  # überprüfen, ob muster gefunden wurde
-  if (any(matches)) {
-    # datum extrahieren
-    date_string <- as.character(regmatches(code_snippet, pattern)[[1]])
-    
-    # datumsteile auf gültigkeit prüfen
-    day <- as.numeric(strsplit(date_string, "/")[[1]])
-    month <- as.numeric(strsplit(date_string, "/")[[2]])
-    
-    # gültige wertebereiche für tag und monat
-    valid_day_range <- 1:31
-    valid_month_range <- 1:12
-    
-    # gültigkeit prüfen und T oder F zurückgeben
-    if (is.numeric(day) & is.numeric(month) & 
-        day %in% valid_day_range & month %in% valid_month_range) {
-      return(TRUE)
-    } else {
-      return(FALSE)
-    }
-  } else {
-    # kein muster gefunden
+  # sind start und end gültig?
+  if (start < 1 | end > nchar(code) | start > end) {
+    stop("invalid input: start and/or end position")
+  }
+  
+  #zeichen extrahieren
+  date_part <- substr(code, start, end)
+  
+  # sind zeichen 4 zeichen lang und zahlen?
+  if (nchar(date_part) != 4 | !grepl("^\\d{4}$", date_part)) {
     return(FALSE)
   }
+  
+  # Tag und Monat raussuchen
+  day <- as.numeric(substr(date_part, 1, 2))
+  month <- as.numeric(substr(date_part, 3, 4))
+  
+  # Monat gültig? 
+  if (month < 1 | month > 12) {
+    return(FALSE)
+  }
+  
+  # Wie viele Tage hat welcher Monat maximal?
+  days_in_month <- c(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+  
+  # Ist der Tag in dem Monat gültig?
+  if (day < 1 | day > days_in_month[month]) {
+    return(FALSE)
+  }
+  
+  return(TRUE)
 }
