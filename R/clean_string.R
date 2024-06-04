@@ -8,5 +8,9 @@
 #' @examples
 #' clean_string("  Giraffen_2b")
 clean_string <- function(string) {
-  trimws(string)
+    string <- trimws(string)
+    string <- gsub("\\s+", "", string)
+    string <- gsub("[^a-zA-Z0-9]", "#", string)
+    string <- toupper(string)
+    return(string)
 }
