@@ -20,6 +20,6 @@ a logical value `TRUE` if the substring represents a valid birthday, otherwise `
 This function checks if a substring of a given code represents a valid birthday in the code
 }
 \examples{
-inspect_birthday("DEF2802", 6, 7) # TRUE
-inspect_birthday("GHI3002", 6, 7) # FALSE
+inspect_birthday("DEF2802", 4, 5) # TRUE
+inspect_birthday("GHI6702", 4, 5) # FALSE
 }

@@ -3,3 +3,4 @@
 export(clean_string)
 export(inspect_birthday)
 export(inspect_birthdaymonth)
+export(inspect_birthmonth)
