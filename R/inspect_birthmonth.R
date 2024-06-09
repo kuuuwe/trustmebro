@@ -15,30 +15,24 @@
 #' inspect_birthmonth("GHI3033", 6, 7) # FALSE
 inspect_birthmonth <- function(code, start, end) {
   #ist das ein string?
-  if (!is.character(code) | length(code) != 1) {
-    stop("invalid input: code must be a string")
+  if (!is.character(code)) {
+    stop("invalid input: code must be a character vector")
   }
   
-  # sind start und end gültig?
-  if (start < 1 | end > nchar(code) | start > end) {
+  # Sind start und end gültige Positionen?
+  if (start < 1 | end > max(nchar(code)) | start > end) {
     stop("invalid input: start and/or end position")
   }
   
-  #zeichen extrahieren
+  # Zeichen extrahieren
   date_part <- substr(code, start, end)
   
-  # sind zeichen 2 zeichen lang und zahlen?
-  if (nchar(date_part) != 2 | !grepl("^\\d{2}$", date_part)) {
-    return(FALSE)
-  }
+  # Sind Zeichen 2 Zeichen lang und Zahlen?
+  valid_date_part <- nchar(date_part) == 2 & grepl("^\\d{2}$", date_part)
   
-  # Tag und Monat raussuchen
-  month <- as.numeric(substr(date_part, 1, 2))
+  # Monat extrahieren und überprüfen
+  month <- as.numeric(date_part)
+  valid_month <- !is.na(month) & month >= 1 & month <= 12
   
-  # Ist Monat gültig?
-  if (month < 1 | month > 12) {
-    return(FALSE)
-  }
-  
-  return(TRUE)
+  return(valid_date_part & valid_month)
 }

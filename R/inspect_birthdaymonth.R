@@ -16,40 +16,40 @@
 #' 
 inspect_birthdaymonth <- function(code, start, end) {
   
-  # ist das ein string?
-  if (!is.character(code) | length(code) != 1) {
-    stop("invalid input: code must be a string")
+  # Ist code ein Vektor von Zeichenketten?
+  if (!is.character(code)) {
+    stop("invalid input: code must be a character vector")
   }
   
-  # sind start und end gültig?
-  if (start < 1 | end > nchar(code) | start > end) {
+  # Sind start und end gültige Positionen?
+  if (start < 1 | end > max(nchar(code)) | start > end) {
     stop("invalid input: start and/or end position")
   }
   
-  #zeichen extrahieren
+  # Zeichen extrahieren
   date_part <- substr(code, start, end)
   
-  # sind zeichen 4 zeichen lang und zahlen?
-  if (nchar(date_part) != 4 | !grepl("^\\d{4}$", date_part)) {
-    return(FALSE)
-  }
+  # Sind Zeichen 4 Zeichen lang und Zahlen?
+  valid_date_part <- nchar(date_part) == 4 & grepl("^\\d{4}$", date_part)
   
-  # Tag und Monat raussuchen
+  # Tag und Monat extrahieren
   day <- as.numeric(substr(date_part, 1, 2))
   month <- as.numeric(substr(date_part, 3, 4))
   
-  # Monat gültig? 
-  if (month < 1 | month > 12) {
-    return(FALSE)
-  }
+  # Überprüfen, ob Monat gültig ist
+  valid_month <- !is.na(month) & month >= 1 & month <= 12
   
-  # Wie viele Tage hat welcher Monat maximal?
+  # Anzahl der Tage in jedem Monat
   days_in_month <- c(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
   
-  # Ist der Tag in dem Monat gültig?
-  if (day < 1 | day > days_in_month[month]) {
-    return(FALSE)
-  }
+  # Gültigkeit der Tage prüfen
+  valid_day <- mapply(function(d, m) {
+    if (is.na(m) | m < 1 | m > 12) {
+      return(FALSE)
+    }
+    return(d >= 1 & d <= days_in_month[m])
+  }, day, month)
   
-  return(TRUE)
+  # Rückgabe eines logischen Vektors, der die Gültigkeit anzeigt
+  return(valid_date_part & valid_day & valid_month)
 }
