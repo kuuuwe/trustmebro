@@ -22,11 +22,11 @@
 #' print(invalid_birthdays)
 #' 
 report_invalid_birthday <- function(data, code, start, end) {
-  # überprüfen des Geburtstags
+  # inspect birthdays
   data <- data %>%
     mutate(birthday_Valid = inspect_birthday(!!sym(code), start, end))
   
-  # extrahieren ungültiger Geburtstage
+  # extract invalid birthdays
   invalid_birthdays <- data %>%
     filter(birthday_Valid == FALSE) %>%
     select(code)

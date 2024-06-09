@@ -31,7 +31,7 @@ code = c("APE1601", "TBG3568", "DFR2508")
 # report invalid birthdays in code
 invalid_birthdays <- report_invalid_birthdays(data, "code", 4, 5)
 
-# Anzeigen der Ergebnisse
+# show results
 print(invalid_birthdays)
 
 }
