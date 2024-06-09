@@ -24,4 +24,16 @@
   <url>
     <loc>/reference/inspect_birthmonth.html</loc>
   </url>
+  <url>
+    <loc>/reference/inspect_letters.html</loc>
+  </url>
+  <url>
+    <loc>/reference/report_invalid_birthday.html</loc>
+  </url>
+  <url>
+    <loc>/reference/report_invalid_birthdaymonth.html</loc>
+  </url>
+  <url>
+    <loc>/reference/report_invalid_birthmonth.html</loc>
+  </url>
 </urlset>
