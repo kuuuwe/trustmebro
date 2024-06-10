@@ -28,6 +28,9 @@
     <loc>/reference/inspect_letters.html</loc>
   </url>
   <url>
+    <loc>/reference/inspect_schoolnumber.html</loc>
+  </url>
+  <url>
     <loc>/reference/report_invalid_birthday.html</loc>
   </url>
   <url>
@@ -35,5 +38,11 @@
   </url>
   <url>
     <loc>/reference/report_invalid_birthmonth.html</loc>
+  </url>
+  <url>
+    <loc>/reference/report_invalid_letters.html</loc>
+  </url>
+  <url>
+    <loc>/reference/report_invalid_schoolnumber.html</loc>
   </url>
 </urlset>
