@@ -1,4 +1,4 @@
-test_that("report invalid birthmonth actually extracts all SGICs with invalid birthmonths", {
+test_that("report_invalid_birthmonth actually extracts all SGICs with invalid birthmonths", {
   # simulate testdata
   data <- tibble(
     code = c("ALE16", "BFG01", "DFG10")

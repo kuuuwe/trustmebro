@@ -1,4 +1,4 @@
-test_that("report invalid letters actually extracts all SGICs with invalid number of letters", {
+test_that("report_invalid_letters actually extracts all SGICs with invalid number of letters", {
   # simulate testdata
   data <- tibble(
     code = c("ALE16", "BFGX1", "FG10")
