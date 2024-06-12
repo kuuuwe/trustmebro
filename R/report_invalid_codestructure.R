@@ -4,7 +4,7 @@
 #' @param code a string containing a SGIC
 #' @param pattern an expected pattern / regex
 #'
-#' @return
+#' @return a tibble containing only SGICs with incalid code structure
 #' @export
 #' @import dplyr
 #'

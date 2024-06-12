@@ -13,6 +13,9 @@ report_invalid_codestructure(data, code, pattern)
 
 \item{pattern}{an expected pattern / regex}
 }
+\value{
+a tibble containing only SGICs with incalid code structure
+}
 \description{
 report invalid code structure
 }
