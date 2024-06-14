@@ -13,6 +13,9 @@
     <loc>/reference/clean_string.html</loc>
   </url>
   <url>
+    <loc>/reference/clean_strings_in_df.html</loc>
+  </url>
+  <url>
     <loc>/reference/index.html</loc>
   </url>
   <url>
@@ -25,6 +28,9 @@
     <loc>/reference/inspect_birthmonth.html</loc>
   </url>
   <url>
+    <loc>/reference/inspect_codestructure.html</loc>
+  </url>
+  <url>
     <loc>/reference/inspect_invalid_codestructure.html</loc>
   </url>
   <url>
@@ -32,6 +38,12 @@
   </url>
   <url>
     <loc>/reference/inspect_schoolnumber.html</loc>
+  </url>
+  <url>
+    <loc>/reference/load_keydata.html</loc>
+  </url>
+  <url>
+    <loc>/reference/recode_in_df.html</loc>
   </url>
   <url>
     <loc>/reference/report_invalid_birthday.html</loc>

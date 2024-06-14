@@ -61,6 +61,12 @@
 <dd><p>an expected pattern / regex</p></dd>
 
 </dl></div>
+    <div id="value">
+    <h2>Value</h2>
+    
+
+<p>a tibble containing only SGICs with incalid code structure</p>
+    </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
@@ -72,7 +78,7 @@
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># report invalid code structure</span></span></span>
 <span class="r-in"><span><span class="va">invalid_codestructures</span> <span class="op">&lt;-</span> <span class="fu">report_invalid_codestructure</span><span class="op">(</span><span class="va">data</span>, <span class="st">"code"</span>, <span class="st">"^[A-Za-z]{3}[0-9]{4}$"</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in report_invalid_codestructure(data, "code", "^[A-Za-z]{3}[0-9]{4}$"):</span> could not find function "report_invalid_codestructure"</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in UseMethod("mutate"):</span> no applicable method for 'mutate' applied to an object of class "function"</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># show results</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">invalid_codestructures</span><span class="op">)</span></span></span>
