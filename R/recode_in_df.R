@@ -28,15 +28,18 @@
 recode_in_df <- function(data, var, recode_map, new_var) {
   #is var in data?
   var <- enquo(var)
-  
-  # Check if the variable exists in the data
   if (!quo_name(var) %in% names(data)) {
     stop(paste("Variable", quo_name(var), "not found in the data"))
   }
   
-  #apply recode function
-  data <- data %>%
-    mutate({{new_var}} := recode({{var}}, !!!recode_map))
+  #apply recode function if map is not empty
+  if (length(recode_map) == 0) {
+    data <- data %>%
+      mutate({{new_var}} := !!sym(quo_name(var)))
+  } else {
+    data <- data %>%
+      mutate({{new_var}} := recode({{var}}, !!!recode_map))
+  }
   
   return(data)
 }
