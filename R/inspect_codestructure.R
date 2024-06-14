@@ -9,7 +9,7 @@
 #' @examples
 #' inspect_codestructure("ABC1234", "^[A-Za-z]{3}[0-9]{4}$") #TRUE
 
-inspect_invalid_codestructure <- function(code, pattern) {
+inspect_codestructure <- function(code, pattern) {
   # is code a string
   if (!is.character(code)) {
     stop("invalid input: code must be a character vector")
