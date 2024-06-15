@@ -33,7 +33,7 @@ data <- tibble::tibble(
 recode_map_gender <- c("Female" = "F", "Male" = "M", "Other" = "X")
 
 # Applying the function
-data <- recode_variable(data, gender, recode_map_gender, gender_recode)
+data <- recode_in_df(data, gender, recode_map_gender, gender_recode)
 
 print(data)
 

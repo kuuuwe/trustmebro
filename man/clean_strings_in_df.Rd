@@ -17,16 +17,16 @@ clean all characters in a tibble/ data frame
 }
 \examples{
 
-#example student data
-data <- tibble(
+
+data <- tibble::tibble(
 name = c(" Oli Bock", "Oli Gorth   ", "  Oli Hackbarth "),
 testscore = c(125, 195, 345),
 sgic = c("OEB_1345", "LKR 29 854", " R T SSS 1356"))
 
-#apply function
+
 clean_strings_in_df(data)
 
-print results
+
 print(data)
 
 }

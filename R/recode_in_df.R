@@ -7,7 +7,8 @@
 #'
 #' @return a tibble  / dataframe with the new variable added
 #' @export
-#' @import dplyr
+#' @import dplyr 
+#' @import tibble
 #'
 #' @examples
 #' # Example tibble
@@ -21,7 +22,7 @@
 #' recode_map_gender <- c("Female" = "F", "Male" = "M", "Other" = "X")
 #' 
 #' # Applying the function
-#' data <- recode_variable(data, gender, recode_map_gender, gender_recode)
+#' data <- recode_in_df(data, gender, recode_map_gender, gender_recode)
 #' 
 #' print(data)
 #' 

@@ -29,12 +29,17 @@ test_that("recode_in_df works correctly", {
 test_that("recode_in_df handles edge cases", {
   # empty data
   empty_data <- tibble(id = integer(), sex = character())
+  recode_map <- c("Female" = "F", "Male" = "M", "Other" = "X")
   data <- recode_in_df(empty_data, sex, recode_map, sex_new)
   expect_equal(nrow(data), 0)
   expect_true("sex_new" %in% names(data))
 
   # no actual recode
   recode_map_empty <- c()
+  test_data <- tibble(
+    id = 1:5,
+    sex = c("Female", "Male", "Other", NA, "Jace Beleren")
+  )
   data <- recode_in_df(test_data, sex, recode_map_empty, sex_new)
   expect_equal(data$sex_new, test_data$sex)
 })

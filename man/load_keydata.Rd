@@ -9,6 +9,8 @@ load_keydata(filepath, selection = NULL, ...)
 \arguments{
 \item{filepath}{path to the rds-file}
 
+\item{selection}{a list of variables to dplyr::select()}
+
 \item{...}{filter conditions to apply on the data}
 }
 \value{
@@ -18,9 +20,9 @@ a filtered tibble
 load and filter data from an rds-file
 }
 \examples{
-test <- load_keydata(filepath = "my/path/keydata.rds",
+\dontrun{test <- load_keydata(filepath = "my/path/keydata.rds",
 selection = c(year, GUID, schoolnumber, grade, class_designation, sex, my_code),
 Quelle == 2324,
-Klassenstufe == 5)
+Klassenstufe == 5)}
 
 }

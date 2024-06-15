@@ -7,16 +7,17 @@
 #'
 #' @return a tibble containing only SGICs with invalid birthdays
 #' @export
-#' @import dplyr
+#' @import dplyr 
+#' @import tibble
 #' @examples
 #' 
 #' # student data
-#' data <- tibble(
+#' data <- tibble::tibble(
 #' code = c("APE1601", "TBG3568", "DFR2508")
 #' )
 #' 
 #' # report invalid birthdays in code
-#' invalid_birthdays <- report_invalid_birthdays(data, "code", 4, 5)
+#' invalid_birthdays <- report_invalid_birthday(data, "code", 4, 5)
 #' 
 #' # show results
 #' print(invalid_birthdays)

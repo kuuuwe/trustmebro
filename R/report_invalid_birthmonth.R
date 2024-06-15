@@ -8,10 +8,11 @@
 #' @return a tibble containing only SGICs with invalid birthmonth
 #' @export
 #' @import dplyr
+#' @import tibble
 #' @examples
 #' 
 #' # student data
-#' data <- tibble(
+#' data <- tibble::tibble(
 #' code = c("APE1601", "TBG3568", "DFR2508")
 #' )
 #' 

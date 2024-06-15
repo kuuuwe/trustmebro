@@ -6,12 +6,12 @@
 #'
 #' @return a tibble containing only schoolnumbers not equal to the expected length
 #' @export
-#' @import dplyr
+#' @import dplyr tibble
 #' 
 #' @examples
 #' 
 #' # schoolnumbers
-#' data <- tibble(
+#' data <- tibble::tibble(
 #' schoolnumber = c(12345, 54321, 123)
 #' )
 #' 

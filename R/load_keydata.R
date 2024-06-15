@@ -1,6 +1,7 @@
 #' load and filter data from an rds-file
 #'
 #' @param filepath path to the rds-file
+#' @param selection a list of variables to dplyr::select()
 #' @param ... filter conditions to apply on the data
 #'
 #' @return a filtered tibble
@@ -8,10 +9,10 @@
 #' @import dplyr
 #'
 #' @examples
-#' test <- load_keydata(filepath = "my/path/keydata.rds",
+#' \dontrun{test <- load_keydata(filepath = "my/path/keydata.rds",
 #' selection = c(year, GUID, schoolnumber, grade, class_designation, sex, my_code),
 #' Quelle == 2324,
-#' Klassenstufe == 5)
+#' Klassenstufe == 5)}
 #' 
 load_keydata <- function(filepath, selection = NULL, ...) {
   #read RDS-file

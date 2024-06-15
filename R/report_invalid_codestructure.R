@@ -7,11 +7,12 @@
 #' @return a tibble containing only SGICs with incalid code structure
 #' @export
 #' @import dplyr
+#' @import tibble
 #'
 #' @examples
 
 #' # student data
-#' data <- tibble(
+#' data <- tibble::tibble(
 #' code = c("AE1601", "TBG368", "DFR2508")
 #' )
 #' 

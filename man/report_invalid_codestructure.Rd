@@ -21,7 +21,7 @@ report invalid code structure
 }
 \examples{
 # student data
-data <- tibble(
+data <- tibble::tibble(
 code = c("AE1601", "TBG368", "DFR2508")
 )
 
