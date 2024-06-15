@@ -7,6 +7,7 @@
 #' @return a filtered tibble
 #' @export
 #' @import dplyr
+#' @import tibble
 #'
 #' @examples
 #' \dontrun{test <- load_keydata(filepath = "my/path/keydata.rds",
@@ -19,7 +20,7 @@ load_keydata <- function(filepath, selection = NULL, ...) {
   data <- readRDS(filepath)
   #check if tibble, convert otherwise
   if (!tibble::is_tibble(data)) {
-    data <- as:tibble(data)
+    data <- as_tibble(data)
   }
   # select columns if provided
   if (!is.null(select)) {

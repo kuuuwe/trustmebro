@@ -23,6 +23,7 @@
 #' print(invalid_codestructures)
 
 report_invalid_codestructure <- function(data, code, pattern) {
+  codestructure_valid <- NULL
   # inspect schoolnumbers
   data <- data %>%
     mutate(codestructure_valid = inspect_codestructure(!!sym(code), pattern))

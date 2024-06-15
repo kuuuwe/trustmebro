@@ -9,6 +9,7 @@
 #' @export
 #' @import dplyr 
 #' @import tibble
+#' @import rlang
 #'
 #' @examples
 #' # Example tibble

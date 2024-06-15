@@ -23,6 +23,7 @@
 #' print(invalid_birthdaymonths)
 #' 
 report_invalid_birthdaymonth <- function(data, code, start, end) {
+  birthdaymonth_valid <- NULL
   # inspect birthdate
   data <- data %>%
     mutate(birthdaymonth_valid = inspect_birthdaymonth(!!sym(code), start, end))

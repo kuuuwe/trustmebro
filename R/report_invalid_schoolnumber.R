@@ -22,6 +22,7 @@
 #' print(invalid_schoolnumbers)
 #' 
 report_invalid_schoolnumber <- function(data, schoolnumber, expected_length) {
+  schoolnumber_Valid <- NULL
   # inspect schoolnumbers
   data <- data %>%
     mutate(schoolnumber_Valid = inspect_schoolnumber(!!sym(schoolnumber), expected_length))
