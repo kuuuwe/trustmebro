@@ -3,7 +3,7 @@
 #' @param data a dataframe or tibble 
 #' @param code a string variable containing a SGIC
 #' @param start start position of birthday
-#' @param end en position of birthday
+#' @param end end position of birthday
 #'
 #' @return a tibble containing only SGICs with invalid birthdays
 #' @export

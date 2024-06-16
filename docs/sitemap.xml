@@ -40,6 +40,9 @@
     <loc>/reference/inspect_schoolnumber.html</loc>
   </url>
   <url>
+    <loc>/reference/inspect_sex.html</loc>
+  </url>
+  <url>
     <loc>/reference/load_keydata.html</loc>
   </url>
   <url>
@@ -62,5 +65,8 @@
   </url>
   <url>
     <loc>/reference/report_invalid_schoolnumber.html</loc>
+  </url>
+  <url>
+    <loc>/reference/report_invalid_sex.html</loc>
   </url>
 </urlset>

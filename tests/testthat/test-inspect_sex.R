@@ -1,30 +1,37 @@
-test_that("inspect_sex works correctly", {
-  #generate data
-  test_data <- tibble(
-    id = 1:5,
-    sex = c("M", "F", "M", "X", "F")
-  )
-  #recode map
-  recode_map <- c("M" = "Male", "F" = "Female")
+#common cases
+test_that("inspect_sex correctly identifies values in the recode map", {
+  recode_map <- c(male = "M", female = "F")
   
-  # Test: Einige Werte sind nicht in der Recodierungsmap
-  not_in_map <- inspect_sex(test_data, sex, recode_map)
-  expect_equal(nrow(not_in_map), 1)
-  expect_equal(not_in_map$sex, "X")
+  # "FEMALE" ist nicht in recode_map (case-sensitive)
+  expect_false(inspect_sex("FEMALE", recode_map))
   
-  # Test: Alle Werte sind in der Recodierungsmap
-  recode_map_full <- c("M" = "Male", "F" = "Female", "X" = "Unknown")
-  not_in_map_full <- inspect_sex(test_data, sex, recode_map_full)
-  expect_equal(nrow(not_in_map_full), 0)
+  # "male" ist in recode_map
+  expect_true(inspect_sex("male", recode_map))
   
-  # Test: Keine Werte sind in der Recodierungsmap
-  recode_map_empty <- c()
-  not_in_map_empty <- inspect_sex(test_data, sex, recode_map_empty)
-  expect_equal(nrow(not_in_map_empty), 5)
-  expect_equal(not_in_map_empty$sex, test_data$sex)
+  # T"other" ist nicht in recode_map
+  expect_false(inspect_sex("other", recode_map))
   
-  # Test: Leere Daten
-  empty_data <- tibble(id = integer(), sex = character())
-  not_in_map_empty_data <- inspect_sex(empty_data, sex, recode_map)
-  expect_equal(nrow(not_in_map_empty_data), 0)
+  # "female" ist in recode_map
+  expect_true(inspect_sex("female", recode_map))
+})
+
+# edge cases
+test_that("inspect_sex handles empty recode_map", {
+  recode_map <- c()
+  
+  # empfy recode map should return FALSE
+  expect_false(inspect_sex("male", recode_map))
+  expect_false(inspect_sex("female", recode_map))
+})
+
+test_that("inspect_sex is case-sensitive", {
+  recode_map <- c(MALE = "M", FEMALE = "F")
+  
+  # "male" und "female" sind nicht in recode_map (case-sensitive)
+  expect_false(inspect_sex("male", recode_map))
+  expect_false(inspect_sex("female", recode_map))
+  
+  # "MALE" und "FEMALE" sind in recode_map
+  expect_true(inspect_sex("MALE", recode_map))
+  expect_true(inspect_sex("FEMALE", recode_map))
 })

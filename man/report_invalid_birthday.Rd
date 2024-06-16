@@ -13,7 +13,7 @@ report_invalid_birthday(data, code, start, end)
 
 \item{start}{start position of birthday}
 
-\item{end}{en position of birthday}
+\item{end}{end position of birthday}
 }
 \value{
 a tibble containing only SGICs with invalid birthdays
