@@ -20,7 +20,7 @@ replace_nonalnum_in_df <- function(data, replacement = "#") {
   data <- data %>%
     mutate(across(where(is.character), ~ {
       .x <- gsub("[[:space:]]", "", .x)  #remove whitespace
-      .x <- gsub("[^[:alnum:]]", replacement, .x, perl = TRUE)  #replace nonalnum
+      .x <- gsub("[^[:alnum:]\u00e4\u00f6\u00fc\u00c4\u00d6\u00dc]", replacement, .x, perl = TRUE)  #replace nonalnum
       .x
     }))
   
