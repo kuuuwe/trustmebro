@@ -1,9 +1,11 @@
-#' inspect if a schoolnumber has the expected length
+#' Inspect a schoolnumber 
+#' 
+#' `inspect_schoolnumber` checks if a schoolnumber has the expected length.
 #'
 #' @param schoolnumber a numeric value
 #' @param expected_length expected digits of schoolnumber
 #'
-#' @return a logical value `TRUE` if the substring represents a valid birthmonth, otherwise `FALSE`
+#' @return A logical value `TRUE` if the school_number has the expected length, otherwise `FALSE`.
 #' @export
 #'
 #' @examples
