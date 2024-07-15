@@ -1,7 +1,7 @@
 #' report invalid values according to a recode map
 #'
 #' @param data a dataframe or tibble 
-#' @param variable a numeric value
+#' @param sex a value
 #' @param recode_map expected length of the numeric value
 #'
 #' @return a tibble containing only values which are not a key in the recode_map,
@@ -21,12 +21,12 @@
 #' invalid_sex <- report_invalid_sex(data, "sex", recode_map)
 #' print(invalid_sex)
 #' 
-report_invalid_sex <- function(data, variable, recode_map) {
+report_invalid_sex <- function(data, sex, recode_map) {
   sex_valid <- NULL
-  sex <- NULL
+  sex <- rlang::ensym(sex)
   # inspect schoolnumbers
   data <- data %>%
-    mutate(sex_valid = inspect_sex(!!sym(variable), recode_map))
+    mutate(sex_valid = inspect_sex(!!sex, recode_map))
   
   # extract invalid schoolnumbers
   invalid_sex <- data %>%

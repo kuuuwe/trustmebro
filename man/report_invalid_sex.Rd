@@ -4,12 +4,12 @@
 \alias{report_invalid_sex}
 \title{report invalid values according to a recode map}
 \usage{
-report_invalid_sex(data, variable, recode_map)
+report_invalid_sex(data, sex, recode_map)
 }
 \arguments{
 \item{data}{a dataframe or tibble}
 
-\item{variable}{a numeric value}
+\item{sex}{a value}
 
 \item{recode_map}{expected length of the numeric value}
 }
