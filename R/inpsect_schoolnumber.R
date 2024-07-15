@@ -21,10 +21,3 @@ inspect_schoolnumber <- function(schoolnumber, expected_length) {
   
   return(valid)
 }
-
-
-<<<<<<< HEAD
-#testtesttest
-=======
-simultane Änderung
->>>>>>> 0f02dea441c8c05ada071ec0833ba3e5cb4ffb29
