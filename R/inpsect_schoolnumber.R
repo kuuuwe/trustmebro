@@ -9,6 +9,7 @@
 #' @examples
 #' inspect_schoolnumber(12345, 5)  # TRUE
 #' inspect_schoolnumber(123456, 5)  # FALSE
+#' Ein weiteerer Test zur Erweiterung der Datei.
 inspect_schoolnumber <- function(schoolnumber, expected_length) {
   # check if schoolnumber is numeric
   is_numeric <- grepl("^[0-9]+$", as.character(schoolnumber))
