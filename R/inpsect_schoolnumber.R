@@ -16,6 +16,8 @@ inspect_schoolnumber <- function(schoolnumber, expected_length) {
   # check if length is as expected
   length_correct <- nchar(as.character(schoolnumber)) == expected_length
   
+  #test für konflikt, mal gcken obs klappt
+  
   # return TRUE if both conditions are met, otherwise FALSE
   valid <- is_numeric & length_correct
   
