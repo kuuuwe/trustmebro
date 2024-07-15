@@ -13,7 +13,7 @@ inspect_schoolnumber <- function(schoolnumber, expected_length) {
   # check if schoolnumber is numeric
   is_numeric <- grepl("^[0-9]+$", as.character(schoolnumber))
   
-  # check if length is as expected
+  # check if length is as expected, testesttest
   length_correct <- nchar(as.character(schoolnumber)) == expected_length
   
   # return TRUE if both conditions are met, otherwise FALSE
