@@ -1,6 +1,6 @@
 #' inspect if a schoolnumber has the expected length
 #'
-#' @param schoolnumber a numeric value
+#' @param schoolnumber a numeric value tststs
 #' @param expected_length expected digits of schoolnumber
 #'
 #' @return a logical value `TRUE` if the substring represents a valid schoolnumber, otherwise `FALSE`
