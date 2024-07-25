@@ -2,7 +2,7 @@
 % Please edit documentation in R/replace_nonalnum_in_df.R
 \name{replace_nonalnum_in_df}
 \alias{replace_nonalnum_in_df}
-\title{Replace non-alphanumeric characters and remove spaces and tabs in character columns of a tibble or data frame, umlauts remain unchanged}
+\title{Replace non-alphanumeric characters and remove spaces and tabs in character columns of a tibble or data frame, umlauts and eszett remain unchanged}
 \usage{
 replace_nonalnum_in_df(data, replacement = "#")
 }
@@ -15,7 +15,7 @@ replace_nonalnum_in_df(data, replacement = "#")
 A modified dataframe/ tibble with cleaned character columns
 }
 \description{
-Replace non-alphanumeric characters and remove spaces and tabs in character columns of a tibble or data frame, umlauts remain unchanged
+Replace non-alphanumeric characters and remove spaces and tabs in character columns of a tibble or data frame, umlauts and eszett remain unchanged
 }
 \examples{
 data <- tibble::tibble(
