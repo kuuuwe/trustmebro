@@ -59,6 +59,22 @@ test_that("replace_nonalnum_in_df allows custom replacement character", {
   expect_equal(df_modified, expected_df)
 })
 
+test_that("replace_nonalnum_in_df handles no character columns with NAs correctly", {
+  df <- data.frame(
+    age = c(25, NA, 35),
+    height = c(170, 180, 175)
+  )
+  # expected result
+  expected_df <- data.frame(
+    age = c("25", "#", "35"),
+    height = c(170, 180, 175)
+  )
+  # call function
+  df_modified <- replace_nonalnum_in_df(df, "#")
+  # test equal
+  expect_equal(df_modified, expected_df)
+})
+
 #edge cases
 test_that("replace_nonalnum_in_df handles empty data frame correctly", {
   # data empty
