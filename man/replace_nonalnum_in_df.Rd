@@ -2,12 +2,14 @@
 % Please edit documentation in R/replace_nonalnum_in_df.R
 \name{replace_nonalnum_in_df}
 \alias{replace_nonalnum_in_df}
-\title{Replace non-alphanumeric characters and remove spaces and tabs in character columns of a tibble or data frame, umlauts and eszett remain unchanged}
+\title{Replace non-alphanumeric characters and remove spaces and tabs in character columns of a tibble or data frame, umlauts and eszett remain unchanged, empty strings get replaced}
 \usage{
 replace_nonalnum_in_df(data, ..., replacement = "#")
 }
 \arguments{
 \item{data}{A dataframe or tibble containing columns to be processed}
+
+\item{...}{variables to prepare for matching}
 
 \item{replacement}{The character or string to replace non-alphanumeric characters with. Default is "#"}
 }
@@ -15,14 +17,8 @@ replace_nonalnum_in_df(data, ..., replacement = "#")
 A modified dataframe/ tibble with cleaned character columns
 }
 \description{
-Replace non-alphanumeric characters and remove spaces and tabs in character columns of a tibble or data frame, umlauts and eszett remain unchanged
+Replace non-alphanumeric characters and remove spaces and tabs in character columns of a tibble or data frame, umlauts and eszett remain unchanged, empty strings get replaced
 }
 \examples{
-data <- tibble::tibble(
-  name = c("Alice", "Bob", "Charlie"),
-  description = c("Hello! 123 and special characters #$\%.   Tabs:     ",
-                  "This one has umlauts and spec!al char$cters...",
-                  "Another sentence with @#$\% special! characters and no numbers.")
-)
-data_modified <- replace_nonalnum_in_df(data, "#")
+sailor_students_cleaned <- replace_nonalnum_in_df(sailor_students, sgic, replacement = "#")
 }

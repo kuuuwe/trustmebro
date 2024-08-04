@@ -1,76 +1,60 @@
 #common cases
 test_that("replace_nonalnum_in_df removes spaces and replaces non-alphanumeric characters", {
   # data
-  df <- data.frame(
-    name = c("Alice", "Bob", "Charlie"),
-    description = c("Hello! This is a test string with numbers like 123 and special characters #$%.   Tabs:         ",
-                    "This one has umlauts and spec!al char$cters...",
-                    "Another sentence with @#$% special! characters and no numbers."),
-    stringsAsFactors = FALSE
-  )
+  df <- sailor_students %>% select(sgic)
   # expected result
-  expected_df <- data.frame(
-    name = c("Alice", "Bob", "Charlie"),
-    description = c("Hello#Thisisateststringwithnumberslike123andspecialcharacters####Tabs#",
-                    "Thisonehasumlautsandspec#alchar#cters###",
-                    "Anothersentencewith####special#charactersandnonumbers#"),
-    stringsAsFactors = FALSE
-  )
+  expected_df <- tibble(
+    
+    sgic = c("MUC##0308", "HÄT2701", "MUK3801", "SAM10", "T0601", 
+             "UIT3006", "######", "#", "#", "MOA2210", 
+             "MUK3801", "T0601"))
   # call function
-  df_modified <- replace_nonalnum_in_df(df, "#")
+  df_modified <- replace_nonalnum_in_df(df, sgic, replacement = "#")
   # test equal
   expect_equal(df_modified, expected_df)
 })
 
 test_that("replace_nonalnum_in_df handles no character columns correctly", {
   # data
-  df <- data.frame(
-    age = c(25, 30, 35),
-    height = c(170, 180, 175)
-  )
+  df <- sailor_students %>% select(testscore_langauge)
   # expected result
-  expected_df <- df
+  expected_df <- tibble(
+    
+    testscore_langauge = c(425, 4596, 2456, 2345, 1234,
+                           123, 56, 986, 284, 105,
+                           9586, NA))
   # call function
-  df_modified <- replace_nonalnum_in_df(df, "#")
+  df_modified <- replace_nonalnum_in_df(df, replacement = "#")
   # test equal
   expect_equal(df_modified, expected_df)
 })
 
 test_that("replace_nonalnum_in_df allows custom replacement character", {
   # data
-  df <- data.frame(
-    name = c("Alice", "Bob", "Charlie"),
-    description = c("Hello! This is a test string with numbers like 123 and special characters #$%.   Tabs:",
-                    "This one has umlauts and spec!al char$cters...",
-                    "Another sentence with @#$% special! characters and no numbers."),
-    stringsAsFactors = FALSE
-  )
+  df <- sailor_students %>% select(sgic)
   # expected result
-  expected_df <- data.frame(
-    name = c("Alice", "Bob", "Charlie"),
-    description = c("Hello*Thisisateststringwithnumberslike123andspecialcharacters****Tabs*",
-                    "Thisonehasumlautsandspec*alchar*cters***",
-                    "Anothersentencewith****special*charactersandnonumbers*"),
-    stringsAsFactors = FALSE
-  )
+  expected_df <- tibble(
+    
+    sgic = c("MUC$$0308", "HÄT2701", "MUK3801", "SAM10", "T0601", 
+             "UIT3006", "$$$$$$", "$", "$", "MOA2210", 
+             "MUK3801", "T0601"))
   # call function
-  df_modified <- replace_nonalnum_in_df(df, "*")
-  # expect equal
+  df_modified <- replace_nonalnum_in_df(df, sgic, replacement = "$")
+  # test equal
   expect_equal(df_modified, expected_df)
 })
 
-test_that("replace_nonalnum_in_df handles no character columns with NAs correctly", {
-  df <- data.frame(
-    age = c(25, NA, 35),
-    height = c(170, 180, 175)
-  )
+test_that("replace_nonalnum_in_df canbe used with pipe operator", {
+  # data
+  df <- sailor_students %>% select(sgic)
   # expected result
-  expected_df <- data.frame(
-    age = c("25", "#", "35"),
-    height = c(170, 180, 175)
-  )
+  expected_df <- tibble(
+    
+    sgic = c("MUC$$0308", "HÄT2701", "MUK3801", "SAM10", "T0601", 
+             "UIT3006", "$$$$$$", "$", "$", "MOA2210", 
+             "MUK3801", "T0601"))
   # call function
-  df_modified <- replace_nonalnum_in_df(df, "#")
+  df_modified <- df %>% replace_nonalnum_in_df(sgic, replacement = "$")
   # test equal
   expect_equal(df_modified, expected_df)
 })
@@ -86,7 +70,7 @@ test_that("replace_nonalnum_in_df handles empty data frame correctly", {
   # expected df
   expected_df <- df
   # call function
-  df_modified <- replace_nonalnum_in_df(df, "#")
+  df_modified <- replace_nonalnum_in_df(df, replacement = "#")
   # expect equal
   expect_equal(df_modified, expected_df)
 })

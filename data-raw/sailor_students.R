@@ -3,7 +3,7 @@ library(tibble)
 
 sailor_students <- tibble(
   
-  sigc = c("MUC__0308", "HÄT 2701", "MUK3801", "SAM10", "T0601", 
+  sgic = c("MUC__0308", "HÄT 2701", "MUK3801", "SAM10", "T0601", 
            "      UIT3006 ", "@@@@@@", NA, " ", "MOA2210", 
            "MUK3801", "T0601"),
   
