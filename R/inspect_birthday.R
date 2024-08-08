@@ -1,11 +1,11 @@
-#' inspect birthday component of a string
+#' inspect if a string contains only one number-component which represents a valid birthday
 #'
 #'@description
-#'This function checks if a substring of a given code represents a valid birthday in the code
+#'This function checks if a string contains only one number-component which represents a valid birthday
 #'
 #' @param code a string containing the SGIC
 #'
-#' @return a logical value `TRUE` if the substring represents a valid birthday, otherwise `FALSE`. 
+#' @return a logical value `TRUE` if the string contains only one valid birthday-component, otherwise `FALSE`. 
 #' @export
 #'
 #' @examples

@@ -1,4 +1,4 @@
-#' report invalid birthday and -month components of strings
+#' report strings with invalid birthdate entries
 #'
 #' @param data a dataframe or tibble 
 #' @param code a string variable containing a SGIC

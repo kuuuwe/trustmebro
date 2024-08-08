@@ -1,11 +1,11 @@
 #' inspect birthday and -month component of a string
 #'
 #'@description
-#'This function checks if a substring of a given code represents a valid birthdate in the code
+#'This function checks if a string contains only one number-component representing a valid combinations of birthday followed by month
 #'
 #' @param code a string containing the SGIC
 #'
-#' @return a logical value `TRUE` if the substring represents a valid date, otherwise `FALSE`. 
+#' @return a logical value `TRUE` if the string hat only one number-component representing a valid birthday and -month, otherwise `FALSE`. 
 #' @export
 #'
 #' @examples

@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_birthday.R
 \name{inspect_birthday}
 \alias{inspect_birthday}
-\title{inspect birthday component of a string}
+\title{inspect if a string contains only one number-component which represents a valid birthday}
 \usage{
 inspect_birthday(code)
 }
@@ -10,10 +10,10 @@ inspect_birthday(code)
 \item{code}{a string containing the SGIC}
 }
 \value{
-a logical value `TRUE` if the substring represents a valid birthday, otherwise `FALSE`.
+a logical value `TRUE` if the string contains only one valid birthday-component, otherwise `FALSE`.
 }
 \description{
-This function checks if a substring of a given code represents a valid birthday in the code
+This function checks if a string contains only one number-component which represents a valid birthday
 }
 \examples{
 inspect_birthday("DEF2802") # TRUE

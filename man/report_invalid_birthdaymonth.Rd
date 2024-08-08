@@ -2,7 +2,7 @@
 % Please edit documentation in R/report_invalid_birthdaymonth.R
 \name{report_invalid_birthdaymonth}
 \alias{report_invalid_birthdaymonth}
-\title{report invalid birthday and -month components of strings}
+\title{report strings with invalid birthdate entries}
 \usage{
 report_invalid_birthdaymonth(data, code)
 }
@@ -15,7 +15,7 @@ report_invalid_birthdaymonth(data, code)
 a tibble containing only SGICs with invalid birthdates
 }
 \description{
-report invalid birthday and -month components of strings
+report strings with invalid birthdate entries
 }
 \examples{
 

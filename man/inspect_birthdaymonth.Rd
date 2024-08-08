@@ -10,10 +10,10 @@ inspect_birthdaymonth(code)
 \item{code}{a string containing the SGIC}
 }
 \value{
-a logical value `TRUE` if the substring represents a valid date, otherwise `FALSE`.
+a logical value `TRUE` if the string hat only one number-component representing a valid birthday and -month, otherwise `FALSE`.
 }
 \description{
-This function checks if a substring of a given code represents a valid birthdate in the code
+This function checks if a string contains only one number-component representing a valid combinations of birthday followed by month
 }
 \examples{
 inspect_birthdaymonth("DEF2802") # TRUE
