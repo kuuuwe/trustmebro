@@ -1,0 +1,56 @@
+---
+title: "Inspect SGICs"
+output: rmarkdown::html_vignette
+description: >
+  This vingette shows you how to use the package for checking SGIcs and related survey data on plausibility and how to prepare data that could   be further used in reports 
+vignette: >
+  %\VignetteIndexEntry{inspect_sgics}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(trustmebro)
+```
+
+When using SGICs to link survey data from different sources, it's crucial to first clean the data and assess the entries for plausibility before proceeding with the actual data linkage.
+
+## Data: sailor_students
+
+The survey data we use in this vingette is the `sailor_students` dataset. It contains fictional student assessment data from students of the sailor moon universe. 
+
+```{r}
+dim(sailor_students)
+sailor_students
+```
+
+To link this assessment data with other data, we want to check if the SGICs and other background information used in the linkage process are plausible. Before doing so, we want so remove whitespace from all character vectors and replace empty strings with missing values (`NA`). We can use `clean_strings_in_df` for this:
+
+```{r}
+sailor_students <- clean_strings_in_df(sailor_students)
+sailor_students
+```
+
+## Check plausibility of SGICs
+
+The SGIC used for gathering `sailor_students` should contain of three letters (first letter of students first name, last letter of students first name and first letter of students last name) followed by their birthday and -month.
+
+Using `report_invalid_codestructure`, we can operationalize this expected code structure and create a tibble that contains only rows who fail this expectation:
+
+```{r}
+report_invalid_codestructure(sailor_students, "sgic", "^[A-Za-z]{3}[0-9]{4}$")
+```
+
+We can further check for sgic-plausibility by indentifying SGICs with implausible birthdates. We can use `report_invalid_birthdaymonth` for this:
+```{r}
+report_invalid_birthdaymonth(sailor_students, "sgic")
+```
+
+

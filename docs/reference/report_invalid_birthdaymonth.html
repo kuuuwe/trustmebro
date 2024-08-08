@@ -21,6 +21,12 @@
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="../articles/inspect_sgics.html">Inspect SGICs</a>
+  </div>
+</li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
@@ -42,7 +48,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">report_invalid_birthdaymonth</span><span class="op">(</span><span class="va">data</span>, <span class="va">code</span>, <span class="va">start</span>, <span class="va">end</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">report_invalid_birthdaymonth</span><span class="op">(</span><span class="va">data</span>, <span class="va">code</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -53,14 +59,6 @@
 
 <dt>code</dt>
 <dd><p>a string variable containing a SGIC</p></dd>
-
-
-<dt>start</dt>
-<dd><p>start position of birthdate</p></dd>
-
-
-<dt>end</dt>
-<dd><p>en position of birthdate</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -79,16 +77,14 @@
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># report invalid birthdaymonths in code</span></span></span>
-<span class="r-in"><span><span class="va">invalid_birthdaymonths</span> <span class="op">&lt;-</span> <span class="fu">report_invalid_birthdaymonth</span><span class="op">(</span><span class="va">data</span>, <span class="st">"code"</span>, <span class="fl">6</span>, <span class="fl">7</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">invalid_birthdaymonths</span> <span class="op">&lt;-</span> <span class="fu">report_invalid_birthdaymonth</span><span class="op">(</span><span class="va">data</span>, <span class="st">"code"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># show results</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">invalid_birthdaymonths</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 1</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 1</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   code   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> APE1601</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> TBG3568</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> DFR2508</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> TBG3568</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
