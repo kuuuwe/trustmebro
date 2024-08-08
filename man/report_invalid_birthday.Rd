@@ -4,16 +4,12 @@
 \alias{report_invalid_birthday}
 \title{report invalid birthday components of strings}
 \usage{
-report_invalid_birthday(data, code, start, end)
+report_invalid_birthday(data, code)
 }
 \arguments{
 \item{data}{a dataframe or tibble}
 
 \item{code}{a string variable containing a SGIC}
-
-\item{start}{start position of birthday}
-
-\item{end}{end position of birthday}
 }
 \value{
 a tibble containing only SGICs with invalid birthdays
@@ -29,7 +25,7 @@ code = c("APE1601", "TBG3568", "DFR2508")
 )
 
 # report invalid birthdays in code
-invalid_birthdays <- report_invalid_birthday(data, "code", 4, 5)
+invalid_birthdays <- report_invalid_birthday(data, "code")
 
 # show results
 print(invalid_birthdays)

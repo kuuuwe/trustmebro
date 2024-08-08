@@ -4,14 +4,10 @@
 \alias{inspect_birthday}
 \title{inspect birthday component of a string}
 \usage{
-inspect_birthday(code, start, end)
+inspect_birthday(code)
 }
 \arguments{
 \item{code}{a string containing the SGIC}
-
-\item{start}{start position of birthday}
-
-\item{end}{end position of birthday}
 }
 \value{
 a logical value `TRUE` if the substring represents a valid birthday, otherwise `FALSE`.
@@ -20,6 +16,6 @@ a logical value `TRUE` if the substring represents a valid birthday, otherwise `
 This function checks if a substring of a given code represents a valid birthday in the code
 }
 \examples{
-inspect_birthday("DEF2802", 4, 5) # TRUE
-inspect_birthday("GHI6702", 4, 5) # FALSE
+inspect_birthday("DEF2802") # TRUE
+inspect_birthday("GHI6702") # FALSE
 }

@@ -42,15 +42,23 @@ sailor_students
 
 The SGIC used for gathering `sailor_students` should contain of three letters (first letter of students first name, last letter of students first name and first letter of students last name) followed by their birthday and -month.
 
+#Check plausibility of structure
+
 Using `report_invalid_codestructure`, we can operationalize this expected code structure and create a tibble that contains only rows who fail this expectation:
 
 ```{r}
 report_invalid_codestructure(sailor_students, "sgic", "^[A-Za-z]{3}[0-9]{4}$")
 ```
 
+#Check plausibility of birthdate-components
+
 We can further check for sgic-plausibility by indentifying SGICs with implausible birthdates. We can use `report_invalid_birthdaymonth` for this:
 ```{r}
 report_invalid_birthdaymonth(sailor_students, "sgic")
 ```
+
+In this example, SGICs should contain the birthday followed by the birthmonth of a student. Some SGICs only ask for either of those. You can use `report_invalid_birthday` or `report_invalid_borthmonth` in those cases.
+
+## Check plausibility of backgorund variables
 
 

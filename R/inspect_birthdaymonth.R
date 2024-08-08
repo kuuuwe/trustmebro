@@ -50,7 +50,7 @@ inspect_birthdaymonth <- function(code) {
     return(valid_day)
   }
   
-  # Überprüfen jedes Elements im Vektor
+  # Überprüfe jedes Elements im Vektor
   result <- sapply(code, check_string, USE.NAMES = FALSE)
   
   return(result)
