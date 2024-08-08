@@ -1,0 +1,64 @@
+---
+title: "get data matchready"
+output: rmarkdown::html_vignette
+description: >
+  This vingette shows you how to use the package for preparing data to be linked via error-tolerant matching 
+vignette: >
+  %\VignetteIndexEntry{get_data_matchready}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(trustmebro)
+library(dplyr)
+```
+
+Most of the time, a lot of data cleaning has to take place before we can finally link datasets from different sources. In this vingette we show you how our package may be helpful to prepare your SGIC-data.
+
+# Load key data
+
+Our key data set `sailor_keys` is a longitudinal data set in long format. To link this key data to data collected at a certain time with certain characteristics. We don't want to load the whole dataset in our environment. To only load in our environment what we really need, We can use `load_keydata`to select variables and filter rows:
+
+```{r, eval = FALSE}
+load_keydata(filepath = "my/path/keydata.rds",
+             selection = c(guid, schoolnumber, grade_level, class_designation, birthday, sex, sgic1),
+             schoolyear == 2324,
+             grade_level == 10)
+```
+
+# Replace non-alphanumeric characters you don't want to deal with
+
+Strings in survey data often contain whitespace and characters that should not be there in the first place. We can replace all non-alphanumeric characters in string-variables of our data using `replace_nonalnum_in_df`:
+
+```{r}
+replace_nonalnum_in_df(sailor_students, replacement = "#")
+```
+
+Please note that since we deal with data collected in Germany, umlauts remain unchanged from this.
+
+# Recode variables
+
+Some variables might need to be recoded for further matching. We can provide a recode map:
+
+```{r}
+recode_map <- c(Male = "M", Female = "F")
+```
+
+And pass it to `recode_in_df` to recode the values accordingly. A new column will be added that contains the recoded values
+
+```{r}
+recode_in_df(sailor_students, gender, recode_map, gender_recode)
+```
+
+# Exclude cases
+
+We want to exclude cases from linkage if they are not unique or if certain characteristics are missing. `exclude_cases`
+
