@@ -1,5 +1,6 @@
 url: ~
 template:
   bootstrap: 5
-  bootswatch: solar
+  bootswatch: flatly
+  light-switch: true
 
