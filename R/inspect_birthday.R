@@ -9,36 +9,36 @@
 #' @export
 #'
 #' @examples
-#' inspect_birthday("DEF2802") # TRUE
-#' inspect_birthday("GHI6702") # FALSE
+#' inspect_birthday("DEF66") # FALSE
+#' inspect_birthday("GHI02") # TRUE
 inspect_birthday <- function(code) {
   
-  # ist das ein string?
+  # check if input is a character
   if (!is.character(code)) {
     stop("invalid input: code must be a character vector")
   }
   
-  # Funktion zum Prüfen eines Strings
+  # function for checking input
   check_string <- function(c) {
-    # Suche nach allen Blöcken von aufeinanderfolgenden Ziffern
+    # identify numbers
     matches <- regmatches(c, gregexpr("\\d+", c))[[1]]
     
-    # Finde den ersten Block mit genau 2 Ziffern
+    # get first block with 2 numbers
     match <- matches[nchar(matches) == 2]
     
-    # Prüfe, ob genau ein Block von 2 Ziffern gefunden wurde
+    # check if there is only one block with 2 numbers
     if (length(match) != 1) {
       return(FALSE)
     }
     
-    # Tag extrahieren und überprüfen
+    # check if number is a valid birthday
     day <- as.numeric(match)
     valid_day <- !is.na(day) & day >= 1 & day <= 31
     
     return(valid_day)
   }
   
-  # Überprüfe jedes Elements im Vektor
+  # check every vector element
   result <- sapply(code, check_string)
   names(result) <- NULL
   

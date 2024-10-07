@@ -16,6 +16,6 @@ a logical value `TRUE` if the string contains only one valid birthday-component,
 This function checks if a string contains only one number-component which represents a valid birthday
 }
 \examples{
-inspect_birthday("DEF2802") # TRUE
-inspect_birthday("GHI6702") # FALSE
+inspect_birthday("DEF66") # FALSE
+inspect_birthday("GHI02") # TRUE
 }

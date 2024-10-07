@@ -3,7 +3,7 @@
 #' @description
 #' A fictional assessment dataset.
 #'
-#' @format ## `sailor_students`
+#' @format `sailor_students`
 #' A data frame with 12 rows and 6 columns:
 #' \describe{
 #'   \item{sgic}{Subjec generated ID}
@@ -20,7 +20,7 @@
 #' @description
 #' A fictional key dataset.
 #'
-#' @format ## `sailor_keys`
+#' @format `sailor_keys`
 #' A data frame with 12 rows and 6 columns:
 #' \describe{
 #'   \item{schoolyeara}{schoolyear}

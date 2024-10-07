@@ -2,16 +2,16 @@
 % Please edit documentation in R/recode_in_df.R
 \name{recode_in_df}
 \alias{recode_in_df}
-\title{recode a variabel in a tibble / dataframe}
+\title{recode a variable in a tibble / dataframe}
 \usage{
 recode_in_df(data, var, recode_map, new_var)
 }
 \arguments{
 \item{data}{a tibble / dataframe}
 
-\item{var}{the variable to be recoded}
+\item{var}{a variable to be recoded}
 
-\item{recode_map}{a names vecctor spedifying the recode map}
+\item{recode_map}{a names vector specifying the recode map}
 
 \item{new_var}{name of the new variable to be generated with the recoded values from 'recode_map'}
 }
@@ -19,22 +19,11 @@ recode_in_df(data, var, recode_map, new_var)
 a tibble  / dataframe with the new variable added
 }
 \description{
-recode a variabel in a tibble / dataframe
+recode a variable in a tibble / dataframe
 }
 \examples{
-# Example tibble
-data <- tibble::tibble(
-  id = 1:5,
-  gender = c("Female", "Male", "Female", "Female", "Male"),
-  status = c(1, 0, 2, 1, 0)
-)
-
-# Recode maps
+print(sailor_students)
 recode_map_gender <- c("Female" = "F", "Male" = "M", "Other" = "X")
-
-# Applying the function
-data <- recode_in_df(data, gender, recode_map_gender, gender_recode)
-
-print(data)
-
+sailor_students_recoded <- recode_in_df(sailor_students, gender, recode_map_gender, recode_gender)
+print(sailor_students_recoded)
 }

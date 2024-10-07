@@ -20,5 +20,7 @@ A modified dataframe/ tibble with cleaned character columns
 Replace non-alphanumeric characters and remove spaces and tabs in character columns of a tibble or data frame, umlauts and eszett remain unchanged, empty strings get replaced
 }
 \examples{
-sailor_students_cleaned <- replace_nonalnum_in_df(sailor_students, sgic, replacement = "#")
+print(sailor_students)
+sailor_students_cleaned <- replace_nonalnum_in_df(sailor_students, sgic, school, class, gender, replacement = "#")
+print(sailor_students_cleaned)
 }

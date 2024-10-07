@@ -10,10 +10,11 @@
 #' @import tibble
 #'
 #' @examples
+#' 
 #' \dontrun{test <- load_keydata(filepath = "my/path/keydata.rds",
-#' selection = c(year, GUID, schoolnumber, grade, class_designation, sex, my_code),
-#' Quelle == 2324,
-#' Klassenstufe == 5)}
+#' selection = c(year, GUID, schoolnumber, grade, class_designation, sex, sgic),
+#' year == 2324,
+#' class_designation == 5)}
 #' 
 load_keydata <- function(filepath, selection = NULL, ...) {
   #read RDS-file
@@ -23,7 +24,7 @@ load_keydata <- function(filepath, selection = NULL, ...) {
     data <- as_tibble(data)
   }
   # select columns if provided
-  if (!is.null(select)) {
+  if (!is.null(selection)) {
     data <- data %>%
       select({{selection}})
   }

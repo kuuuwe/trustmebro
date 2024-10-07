@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_sex.R
 \name{inspect_sex}
 \alias{inspect_sex}
-\title{Inspect if a value is in the recode map}
+\title{Inspect if a value is in a specified recode map}
 \usage{
 inspect_sex(value, recode_map)
 }
@@ -15,7 +15,7 @@ inspect_sex(value, recode_map)
 a logical value `TRUE` if the value is a key in the recode_map, otherwise `FALSE`
 }
 \description{
-Inspect if a value is in the recode map
+Inspect if a value is in a specified recode map
 }
 \examples{
 recode_map <- c(male = "M", female = "F")

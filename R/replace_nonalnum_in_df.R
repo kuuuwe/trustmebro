@@ -10,7 +10,9 @@
 #' @import tibble
 #'
 #' @examples
-#' sailor_students_cleaned <- replace_nonalnum_in_df(sailor_students, sgic, replacement = "#")
+#' print(sailor_students)
+#' sailor_students_cleaned <- replace_nonalnum_in_df(sailor_students, sgic, school, class, gender, replacement = "#")
+#' print(sailor_students_cleaned)
 replace_nonalnum_in_df <- function(data, ..., replacement = "#") {
   # Capture variables specified in ...
   vars <- enquos(...)

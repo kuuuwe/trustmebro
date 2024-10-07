@@ -13,7 +13,7 @@ inspect_birthdaymonth(code)
 a logical value `TRUE` if the string hat only one number-component representing a valid birthday and -month, otherwise `FALSE`.
 }
 \description{
-This function checks if a string contains only one number-component representing a valid combinations of birthday followed by month
+This function checks if a string contains only one number-component representing a valid combination of birthday followed by month
 }
 \examples{
 inspect_birthdaymonth("DEF2802") # TRUE

@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_dupes.R
 \name{inspect_dupes}
 \alias{inspect_dupes}
-\title{Inspect for duplicate cases based on specified variables}
+\title{Inspect data for duplicate cases based on specified variables}
 \usage{
 inspect_dupes(data, ...)
 }
@@ -15,17 +15,10 @@ inspect_dupes(data, ...)
 The original data frame with an additional logical column 'has_dupes'
 }
 \description{
-Inspect for duplicate cases based on specified variables
+Inspect data for duplicate cases based on specified variables
 }
 \examples{
-# Example data frame
-data <- tibble::tibble(
-  id = 1:5,
-  name = c("Alice", "Bob", "Alice", "David", "Alice"),
-  age = c(25, 30, 25, 40, 25)
-)
-
-# Check for duplicates based on 'name' and 'age'
-result <- inspect_dupes(data, name, age)
-print(result)
+print(sailor_students)
+sailor_students_dupes <- inspect_dupes(sailor_students, sgic, school, class)
+print(sailor_students_dupes)
 }

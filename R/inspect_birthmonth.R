@@ -13,32 +13,32 @@
 #' inspect_birthmonth("GHI33") # FALSE
 inspect_birthmonth <- function(code) {
   
-  # ist das ein string?
+  # check if input is a character
   if (!is.character(code)) {
     stop("invalid input: code must be a character vector")
   }
   
-  # Funktion zum Prüfen eines Strings
+  # function for checking valid birthmonth
   check_string <- function(c) {
-    # Suche nach allen Blöcken von aufeinanderfolgenden Ziffern
+    # identify number components
     matches <- regmatches(c, gregexpr("\\d+", c))[[1]]
     
-    # Finde den ersten Block mit genau 2 Ziffern
+    # identify blocks of numbers containing 2 digits
     match <- matches[nchar(matches) == 2]
     
-    # Prüfe, ob genau ein Block von 2 Ziffern gefunden wurde
+    # check if only one number component is present
     if (length(match) != 1) {
       return(FALSE)
     }
     
-    # Tag extrahieren und überprüfen
+    # extract month and check if month is valid
     month <- as.numeric(match)
     valid_month <- !is.na(month) & month >= 1 & month <= 12
     
     return(valid_month)
   }
   
-  # Überprüfe jedes Elements im Vektor
+  # check every element in vector
   result <- sapply(code, check_string)
   names(result) <- NULL
   

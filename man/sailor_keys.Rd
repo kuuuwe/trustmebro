@@ -5,7 +5,7 @@
 \alias{sailor_keys}
 \title{key data on students from the sailor moon universe}
 \format{
-## `sailor_keys`
+`sailor_keys`
 A data frame with 12 rows and 6 columns:
 \describe{
   \item{schoolyeara}{schoolyear}

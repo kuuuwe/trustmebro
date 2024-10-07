@@ -1,7 +1,7 @@
 #' inspect birthday and -month component of a string
 #'
 #'@description
-#'This function checks if a string contains only one number-component representing a valid combinations of birthday followed by month
+#'This function checks if a string contains only one number-component representing a valid combination of birthday followed by month
 #'
 #' @param code a string containing the SGIC
 #'
@@ -14,43 +14,43 @@
 #' 
 inspect_birthdaymonth <- function(code) {
   
-  # Überprüfen, ob code ein Vektor von Zeichenketten ist
+  # check if input is a character
   if (!is.character(code)) {
     stop("invalid input: code must be a character vector")
   }
   
-  # Funktion zum Prüfen eines einzelnen Strings
+  # function for checking birthday and birthmonth
   check_string <- function(c) {
-    # Suche nach einem Block von aufeinanderfolgenden Ziffern
+    # identify numbers
     match <- regmatches(c, gregexpr("\\d+", c))[[1]]
     
-    # Prüfen, ob genau ein Block von 4 Ziffern gefunden wurde
+    # check for one block of numbers containing 4 digits
     if (length(match) != 1 || nchar(match) != 4) {
       return(FALSE)
     }
     
-    # Block der Ziffern extrahieren
+    # extract number component
     date_part <- match
     
-    # Tag und Monat extrahieren
+    # extract day and month
     day <- as.numeric(substr(date_part, 1, 2))
     month <- as.numeric(substr(date_part, 3, 4))
     
-    # Überprüfen, ob Monat gültig ist
+    # check if month is valid
     if (is.na(month) || month < 1 || month > 12) {
       return(FALSE)
     }
     
-    # Anzahl der Tage in jedem Monat
+    # number of days in month
     days_in_month <- c(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
     
-    # Überprüfen, ob Tag gültig ist
+    # check if day is valid
     valid_day <- day >= 1 & day <= days_in_month[month]
     
     return(valid_day)
   }
   
-  # Überprüfe jedes Elements im Vektor
+  # check every element of vector
   result <- sapply(code, check_string, USE.NAMES = FALSE)
   
   return(result)

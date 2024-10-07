@@ -1,4 +1,4 @@
-#' Inspect if a value is in the recode map
+#' Inspect if a value is in a specified recode map
 #'
 #' @param value A single value to inspect
 #' @param recode_map A named vector where the names represent the keys to check against

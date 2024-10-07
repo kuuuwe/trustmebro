@@ -5,7 +5,7 @@
 \alias{sailor_students}
 \title{assessment data on students from the sailor moon universe}
 \format{
-## `sailor_students`
+`sailor_students`
 A data frame with 12 rows and 6 columns:
 \describe{
   \item{sgic}{Subjec generated ID}
