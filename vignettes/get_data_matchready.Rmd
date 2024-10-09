@@ -58,7 +58,4 @@ And pass it to `recode_valinvec` to recode the values accordingly. A new column 
 recode_valinvec(sailor_students, gender, recode_map, gender_recode)
 ```
 
-# Exclude cases
-
-We want to exclude cases from linkage if they are not unique or if certain characteristics are missing. `exclude_cases`
 
