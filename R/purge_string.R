@@ -13,9 +13,9 @@
 #' @examples
 #' print(sailor_students)
 #' sailor_students_cleaned <- 
-#' replace_nonalnum_in_df(sailor_students, sgic, school, class, gender, replacement = "#")
+#' purge_string(sailor_students, sgic, school, class, gender, replacement = "#")
 #' print(sailor_students_cleaned)
-replace_nonalnum_in_df <- function(data, ..., replacement = "#", keep = "") {
+purge_string <- function(data, ..., replacement = "#", keep = "") {
   # Capture variables specified in ...
   vars <- enquos(...)
   

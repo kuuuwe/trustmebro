@@ -14,9 +14,10 @@
 #' @examples
 #' print(sailor_students)
 #' recode_map_gender <- c("Female" = "F", "Male" = "M", "Other" = "X")
-#' sailor_students_recoded <- recode_in_df(sailor_students, gender, recode_map_gender, recode_gender)
+#' sailor_students_recoded <- 
+#' recode_valinvec(sailor_students, gender, recode_map_gender, recode_gender)
 #' print(sailor_students_recoded)
-recode_in_df <- function(data, var, recode_map, new_var) {
+recode_valinvec <- function(data, var, recode_map, new_var) {
   #is var in data?
   var <- enquo(var)
   if (!quo_name(var) %in% names(data)) {

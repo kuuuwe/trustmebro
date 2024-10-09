@@ -11,12 +11,12 @@
 #'
 #' @examples
 #' 
-#' \dontrun{test <- load_keydata(filepath = "my/path/keydata.rds",
+#' \dontrun{test <- summon_data(filepath = "my/path/keydata.rds",
 #' selection = c(year, GUID, schoolnumber, grade, class_designation, sex, sgic),
 #' year == 2324,
 #' class_designation == 5)}
 #' 
-load_keydata <- function(filepath, selection = NULL, ...) {
+summon_data <- function(filepath, selection = NULL, ...) {
   #read RDS-file
   data <- readRDS(filepath)
   #check if tibble, convert otherwise

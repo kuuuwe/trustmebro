@@ -1,5 +1,5 @@
 #common cases
-test_that("inspect_dupes correctly identifies duplicate cases", {
+test_that("find_dupes correctly identifies duplicate cases", {
   # data
   data <- tibble::tibble(
     id = 1:5,
@@ -10,12 +10,12 @@ test_that("inspect_dupes correctly identifies duplicate cases", {
   expected_result <- data %>%
     mutate(has_dupes = c(TRUE, FALSE, TRUE, FALSE, TRUE))
   # call function
-  result <- inspect_dupes(data, name, age)
+  result <- find_dupes(data, name, age)
   # test equal
   expect_equal(result, expected_result)
 })
 
-test_that("inspect_dupes handles no duplicates correctly", {
+test_that("find_dupes handles no duplicates correctly", {
   # data
   data <- tibble::tibble(
     id = 1:4,
@@ -26,13 +26,13 @@ test_that("inspect_dupes handles no duplicates correctly", {
   expected_result <- data %>%
     mutate(has_dupes = FALSE)
   # call function
-  result <- inspect_dupes(data, name, age)
+  result <- find_dupes(data, name, age)
   # test equal
   expect_equal(result, expected_result)
 })
 
 #edge caees
-test_that("inspect_dupes handles empty data frame", {
+test_that("find_dupes handles empty data frame", {
   # data empty
   data <- tibble::tibble(
     id = integer(0),
@@ -43,7 +43,7 @@ test_that("inspect_dupes handles empty data frame", {
   expected_result <- data %>%
     mutate(has_dupes = logical(0))
   # call function
-  result <- inspect_dupes(data, name, age)
+  result <- find_dupes(data, name, age)
   # test equal
   expect_equal(result, expected_result)
 })

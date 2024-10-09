@@ -38,6 +38,6 @@ sailor_students
 Every function that starts with *report_* will return a tibble containing rows that failed the respective plausibility check. But maybe you would like to add these check results directly to your data. You can use functions that start with *inspect_* if you want to return the result as a boolean. For our performed plausibility checks on structure and birthdate, we can combine these functions with mutate to add new columns to our tibble containing the check results:
 
 ```{r}
-sailor_students %>% mutate(structure_check = inspect_codestructure(sgic, pattern = "^[A-Za-z]{3}[0-9]{4}$"),
+sailor_students %>% mutate(structure_check = inspect_characterid(sgic, pattern = "^[A-Za-z]{3}[0-9]{4}$"),
                                              birthdate_check = inspect_birthdaymonth(sgic))
 ```

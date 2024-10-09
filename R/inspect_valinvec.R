@@ -8,9 +8,9 @@
 #'
 #' @examples
 #' recode_map <- c(male = "M", female = "F")
-#' inspect_sex("male", recode_map) #TRUE
-#' inspect_sex("other", recode_map) #FALSE
-inspect_sex <- function(value, recode_map) {
+#' inspect_valinvec("male", recode_map) #TRUE
+#' inspect_valinvec("other", recode_map) #FALSE
+inspect_valinvec <- function(value, recode_map) {
   result <- value %in% names(recode_map)
   
   return(result)

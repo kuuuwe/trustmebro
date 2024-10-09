@@ -37,10 +37,10 @@
     <loc>/reference/inspect_birthmonth.html</loc>
   </url>
   <url>
-    <loc>/reference/inspect_codestructure.html</loc>
+    <loc>/reference/inspect_characterid.html</loc>
   </url>
   <url>
-    <loc>/reference/inspect_dupes.html</loc>
+    <loc>/reference/find_dupes.html</loc>
   </url>
   <url>
     <loc>/reference/inspect_invalid_codestructure.html</loc>
@@ -49,19 +49,19 @@
     <loc>/reference/inspect_letters.html</loc>
   </url>
   <url>
-    <loc>/reference/inspect_schoolnumber.html</loc>
+    <loc>/reference/inspect_numericid.html</loc>
   </url>
   <url>
-    <loc>/reference/inspect_sex.html</loc>
+    <loc>/reference/inspect_valinvec.html</loc>
   </url>
   <url>
-    <loc>/reference/load_keydata.html</loc>
+    <loc>/reference/summon_data.html</loc>
   </url>
   <url>
-    <loc>/reference/recode_in_df.html</loc>
+    <loc>/reference/recode_valinvec.html</loc>
   </url>
   <url>
-    <loc>/reference/replace_nonalnum_in_df.html</loc>
+    <loc>/reference/purge_string.html</loc>
   </url>
   <url>
     <loc>/reference/report_dupes.html</loc>

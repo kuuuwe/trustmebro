@@ -1,5 +1,5 @@
 #common cases
-test_that("replace_nonalnum_in_df removes spaces and replaces non-alphanumeric characters", {
+test_that("purge_string removes spaces and replaces non-alphanumeric characters", {
   # data
   df <- sailor_students %>% select(sgic)
   # expected result
@@ -9,12 +9,12 @@ test_that("replace_nonalnum_in_df removes spaces and replaces non-alphanumeric c
              "UIT3006", "######", "#", "#", "MOA2210", 
              "MUK3801", "T0601"))
   # call function
-  df_modified <- replace_nonalnum_in_df(df, sgic, replacement = "#")
+  df_modified <- purge_string(df, sgic, replacement = "#")
   # test equal
   expect_equal(df_modified, expected_df)
 })
 
-test_that("replace_nonalnum_in_df handles no character columns correctly", {
+test_that("purge_string handles no character columns correctly", {
   # data
   df <- sailor_students %>% select(testscore_langauge)
   # expected result
@@ -24,12 +24,12 @@ test_that("replace_nonalnum_in_df handles no character columns correctly", {
                            123, 56, 986, 284, 105,
                            9586, NA))
   # call function
-  df_modified <- replace_nonalnum_in_df(df, replacement = "#")
+  df_modified <- purge_string(df, replacement = "#")
   # test equal
   expect_equal(df_modified, expected_df)
 })
 
-test_that("replace_nonalnum_in_df allows custom replacement character", {
+test_that("purge_string allows custom replacement character", {
   # data
   df <- sailor_students %>% select(sgic)
   # expected result
@@ -39,12 +39,12 @@ test_that("replace_nonalnum_in_df allows custom replacement character", {
              "UIT3006", "$$$$$$", "$", "$", "MOA2210", 
              "MUK3801", "T0601"))
   # call function
-  df_modified <- replace_nonalnum_in_df(df, sgic, replacement = "$")
+  df_modified <- purge_string(df, sgic, replacement = "$")
   # test equal
   expect_equal(df_modified, expected_df)
 })
 
-test_that("replace_nonalnum_in_df canbe used with pipe operator", {
+test_that("purge_string canbe used with pipe operator", {
   # data
   df <- sailor_students %>% select(sgic)
   # expected result
@@ -54,12 +54,12 @@ test_that("replace_nonalnum_in_df canbe used with pipe operator", {
              "UIT3006", "$$$$$$", "$", "$", "MOA2210", 
              "MUK3801", "T0601"))
   # call function
-  df_modified <- df %>% replace_nonalnum_in_df(sgic, replacement = "$")
+  df_modified <- df %>% purge_string(sgic, replacement = "$")
   # test equal
   expect_equal(df_modified, expected_df)
 })
 
-test_that("replace_nonalnum_in_df can handle keep-parameters", {
+test_that("purge_string can handle keep-parameters", {
   # data
   df <- sailor_students %>% select(sgic)
   # expected result
@@ -69,13 +69,13 @@ test_that("replace_nonalnum_in_df can handle keep-parameters", {
              "UIT3006", "@@@@@@", "$", "$", "MOA2210", 
              "MUK3801", "T0601"))
   # call function
-  df_modified <- df %>% replace_nonalnum_in_df(sgic, replacement = "$", keep = "Ä_@")
+  df_modified <- df %>% purge_string(sgic, replacement = "$", keep = "Ä_@")
   # test equal
   expect_equal(df_modified, expected_df)
 })
 
 #edge cases
-test_that("replace_nonalnum_in_df handles empty data frame correctly", {
+test_that("purge_string handles empty data frame correctly", {
   # data empty
   df <- data.frame(
     name = character(0),
@@ -85,7 +85,7 @@ test_that("replace_nonalnum_in_df handles empty data frame correctly", {
   # expected df
   expected_df <- df
   # call function
-  df_modified <- replace_nonalnum_in_df(df, replacement = "#")
+  df_modified <- purge_string(df, replacement = "#")
   # expect equal
   expect_equal(df_modified, expected_df)
 })

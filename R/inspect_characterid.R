@@ -10,10 +10,10 @@
 #' @export
 #'
 #' @examples
-#' inspect_codestructure("ABC1234", "^[A-Za-z]{3}[0-9]{4}$") #TRUE
-#' inspect_codestructure("12DBG45FG", "^[A-Za-z]{3}[0-9]{4}$") #FALSE
+#' inspect_characterid("ABC1234", "^[A-Za-z]{3}[0-9]{4}$") #TRUE
+#' inspect_characterid("12DBG45FG", "^[A-Za-z]{3}[0-9]{4}$") #FALSE
 
-inspect_codestructure <- function(code, pattern) {
+inspect_characterid <- function(code, pattern) {
   # is code a string
   if (!is.character(code)) {
     stop("invalid input: code must be a character vector")
