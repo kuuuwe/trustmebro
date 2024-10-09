@@ -21,6 +21,7 @@ Replace non-alphanumeric characters and remove spaces and tabs in character colu
 }
 \examples{
 print(sailor_students)
-sailor_students_cleaned <- replace_nonalnum_in_df(sailor_students, sgic, school, class, gender, replacement = "#")
+sailor_students_cleaned <- 
+replace_nonalnum_in_df(sailor_students, sgic, school, class, gender, replacement = "#")
 print(sailor_students_cleaned)
 }
