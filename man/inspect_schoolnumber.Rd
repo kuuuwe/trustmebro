@@ -12,7 +12,7 @@ inspect_schoolnumber(schoolnumber, expected_length)
 \item{expected_length}{expected digits of schoolnumber}
 }
 \value{
-a logical value `TRUE` if the substring represents a valid birthmonth, otherwise `FALSE`
+a logical value `TRUE` if the substring represents a valid schoolnumber, otherwise `FALSE`
 }
 \description{
 inspect if a schoolnumber has the expected length

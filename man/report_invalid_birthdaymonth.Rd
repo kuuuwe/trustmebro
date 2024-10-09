@@ -2,24 +2,20 @@
 % Please edit documentation in R/report_invalid_birthdaymonth.R
 \name{report_invalid_birthdaymonth}
 \alias{report_invalid_birthdaymonth}
-\title{report invalid birthday and -month components of strings}
+\title{report strings with invalid birthdate entries}
 \usage{
-report_invalid_birthdaymonth(data, code, start, end)
+report_invalid_birthdaymonth(data, code)
 }
 \arguments{
 \item{data}{a dataframe or tibble}
 
 \item{code}{a string variable containing a SGIC}
-
-\item{start}{start position of birthdate}
-
-\item{end}{en position of birthdate}
 }
 \value{
 a tibble containing only SGICs with invalid birthdates
 }
 \description{
-report invalid birthday and -month components of strings
+report strings with invalid birthdate entries
 }
 \examples{
 
@@ -29,7 +25,7 @@ code = c("APE1601", "TBG3568", "DFR2508")
 )
 
 # report invalid birthdaymonths in code
-invalid_birthdaymonths <- report_invalid_birthdaymonth(data, "code", 6, 7)
+invalid_birthdaymonths <- report_invalid_birthdaymonth(data, "code")
 
 # show results
 print(invalid_birthdaymonths)

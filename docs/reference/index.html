@@ -6,7 +6,7 @@
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
     
 
-    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-dark" data-bs-theme="dark"><div class="container">
+    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light" data-bs-theme="light"><div class="container">
     
     <a class="navbar-brand me-2" href="../index.html">trustmebro</a>
 
@@ -20,6 +20,13 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
+</li>
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="../articles/get_data_matchready.html">get data matchready</a>
+    <a class="dropdown-item" href="../articles/inspect_sgics.html">inspect SGICs</a>
+  </div>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
@@ -54,7 +61,7 @@
           
           <code><a href="inspect_birthday.html">inspect_birthday()</a></code> 
         </dt>
-        <dd>inspect birthday component of a string</dd>
+        <dd>inspect if a string contains only one number-component which represents a valid birthday</dd>
       </dl><dl><dt>
           
           <code><a href="inspect_birthdaymonth.html">inspect_birthdaymonth()</a></code> 
@@ -64,17 +71,27 @@
           
           <code><a href="inspect_birthmonth.html">inspect_birthmonth()</a></code> 
         </dt>
-        <dd>inspect birthmonth component of a string</dd>
+        <dd>inspect if a string contains only one number-component which represents a valid birthmonth</dd>
       </dl><dl><dt>
           
           <code><a href="inspect_codestructure.html">inspect_codestructure()</a></code> 
         </dt>
-        <dd>inspect code structure</dd>
+        <dd>inspect whether a string matches an expected pattern</dd>
+      </dl><dl><dt>
+          
+          <code><a href="inspect_dupes.html">inspect_dupes()</a></code> 
+        </dt>
+        <dd>Inspect data for duplicate cases based on specified variables</dd>
       </dl><dl><dt>
           
           <code><a href="inspect_schoolnumber.html">inspect_schoolnumber()</a></code> 
         </dt>
         <dd>inspect if a schoolnumber has the expected length</dd>
+      </dl><dl><dt>
+          
+          <code><a href="inspect_sex.html">inspect_sex()</a></code> 
+        </dt>
+        <dd>Inspect if a value is in a specified recode map</dd>
       </dl><dl><dt>
           
           <code><a href="load_keydata.html">load_keydata()</a></code> 
@@ -84,22 +101,32 @@
           
           <code><a href="recode_in_df.html">recode_in_df()</a></code> 
         </dt>
-        <dd>recode a variabel in a tibble / dataframe</dd>
+        <dd>recode a variable in a tibble / dataframe</dd>
+      </dl><dl><dt>
+          
+          <code><a href="replace_nonalnum_in_df.html">replace_nonalnum_in_df()</a></code> 
+        </dt>
+        <dd>Replace non-alphanumeric characters and remove spaces and tabs in character columns of a tibble or data frame, umlauts and eszett remain unchanged, empty strings get replaced</dd>
+      </dl><dl><dt>
+          
+          <code><a href="report_dupes.html">report_dupes()</a></code> 
+        </dt>
+        <dd>duplicate cases based on specified variables</dd>
       </dl><dl><dt>
           
           <code><a href="report_invalid_birthday.html">report_invalid_birthday()</a></code> 
         </dt>
-        <dd>report invalid birthday components of strings</dd>
+        <dd>report strings with invalid birthday entries</dd>
       </dl><dl><dt>
           
           <code><a href="report_invalid_birthdaymonth.html">report_invalid_birthdaymonth()</a></code> 
         </dt>
-        <dd>report invalid birthday and -month components of strings</dd>
+        <dd>report strings with invalid birthdate entries</dd>
       </dl><dl><dt>
           
           <code><a href="report_invalid_birthmonth.html">report_invalid_birthmonth()</a></code> 
         </dt>
-        <dd>report invalid birthmonth components of strings</dd>
+        <dd>report strings with invalid birthmonth entries</dd>
       </dl><dl><dt>
           
           <code><a href="report_invalid_codestructure.html">report_invalid_codestructure()</a></code> 
@@ -110,6 +137,21 @@
           <code><a href="report_invalid_schoolnumber.html">report_invalid_schoolnumber()</a></code> 
         </dt>
         <dd>report invalid schoolnumbers</dd>
+      </dl><dl><dt>
+          
+          <code><a href="report_invalid_sex.html">report_invalid_sex()</a></code> 
+        </dt>
+        <dd>report invalid values according to a recode map</dd>
+      </dl><dl><dt>
+          
+          <code><a href="sailor_keys.html">sailor_keys</a></code> 
+        </dt>
+        <dd>key data on students from the sailor moon universe</dd>
+      </dl><dl><dt>
+          
+          <code><a href="sailor_students.html">sailor_students</a></code> 
+        </dt>
+        <dd>assessment data on students from the sailor moon universe</dd>
       </dl></div>
   </main></div>
 

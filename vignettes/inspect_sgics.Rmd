@@ -1,0 +1,107 @@
+---
+title: "inspect SGICs"
+output: rmarkdown::html_vignette
+description: >
+  This vingette shows you how to use the package for checking SGIcs and related survey data on plausibility and how to prepare data that could be further used in reports 
+vignette: >
+  %\VignetteIndexEntry{inspect_sgics}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(trustmebro)
+library(dplyr)
+```
+
+When using SGICs to link survey data from different sources, it's crucial to first clean the data and assess the entries for plausibility before proceeding with the actual data linkage.
+
+# Data: sailor_students
+
+The survey data we use in this vingette is the `sailor_students` dataset. It contains fictional student assessment data from students of the sailor moon universe. 
+
+```{r}
+dim(sailor_students)
+sailor_students
+```
+
+To link this assessment data with other data, we want to check if the SGICs and other background information used in the linkage process are plausible. Before doing so, we want so remove whitespace from all character vectors and replace empty strings with missing values (`NA`). We can use `clean_strings_in_df` for this:
+
+```{r}
+sailor_students <- clean_strings_in_df(sailor_students)
+sailor_students
+```
+
+# Check plausibility of SGICs
+
+The SGIC used for gathering `sailor_students` should contain of three letters (first letter of students first name, last letter of students first name and first letter of students last name) followed by their birthday and -month.
+
+## Check plausibility of structure
+
+Using `report_invalid_codestructure`, we can operationalize this expected code structure and create a tibble that contains only rows who fail this expectation:
+
+```{r}
+report_invalid_codestructure(sailor_students, "sgic", "^[A-Za-z]{3}[0-9]{4}$")
+```
+
+## Check plausibility of birthdate-components
+
+We can further check for sgic-plausibility by indentifying SGICs with implausible birthdates. We can use `report_invalid_birthdaymonth` for this:
+
+```{r}
+report_invalid_birthdaymonth(sailor_students, "sgic")
+```
+
+In this example, SGICs should contain the birthday followed by the birthmonth of a student. Some SGICs only ask for either of those. You can use `report_invalid_birthday` or `report_invalid_borthmonth` in those cases.
+
+# Check plausibility of background variables
+
+To accurately match our data, we not only use students provided SGIC, but also provided background information we want to check on plausibility as well.
+
+## Check plausibility of schoolnumber
+
+Our student data was collected in different schools, represented by a number. This number is always five digits long. 
+We can use `report_invalid_schoolnumber` to check if all provided schoolnumbers are of the expected length. Beforehand, we have to ensure that the variable is numeric:
+
+```{r}
+sailor_students <- sailor_students %>% mutate(school = as.numeric(school))
+report_invalid_schoolnumber(sailor_students, "school", 5)
+```
+
+## Check plausibility of gender
+
+We further can inspect if students provided a plausible gender. In the further linkage process, we want to recode the provided gender to match with our keydata. We will use this recode map:
+
+```{r}
+recode_map <- c(Male = "M", Female = "F")
+```
+
+We can pass this recode map to `report_invalid_sex` and check if all entries on gender are as expected as in the recode map:
+
+```{r}
+report_invalid_sex(sailor_students, "gender", recode_map)
+```
+
+## Check for duplicate SGICs
+
+Data linkage fails, when identifiers are not unique. We therefore want to check our data for duplicate cases. To identify duplicate cases, we check if the combination of SGIC, gender, the attended school, and the class attended is unique. We can use `report_dupes` for this:
+
+```{r}
+report_dupes(sailor_students, school, class, sgic, gender)
+```
+
+# When you don't want seperate tibbles with invalid cases for all your checks
+
+Every function that starts with *report_* will return a tibble containing rows that failed the respective plausibility check. But maybe you would like to add these check results directly to your data. You can use functions that start with *inspect_* if you want to return the result as a boolean. For our performed plausibility checks on structure and birthdate, we can combine these functions with mutate to add new columns to our tibble containing the check results:
+
+```{r}
+sailor_students %>% mutate(structure_check = inspect_codestructure(sgic, pattern = "^[A-Za-z]{3}[0-9]{4}$"),
+                                             birthdate_check = inspect_birthdaymonth(sgic))
+```

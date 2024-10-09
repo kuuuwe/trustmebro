@@ -20,9 +20,10 @@ a filtered tibble
 load and filter data from an rds-file
 }
 \examples{
+
 \dontrun{test <- load_keydata(filepath = "my/path/keydata.rds",
-selection = c(year, GUID, schoolnumber, grade, class_designation, sex, my_code),
-Quelle == 2324,
-Klassenstufe == 5)}
+selection = c(year, GUID, schoolnumber, grade, class_designation, sex, sgic),
+year == 2324,
+class_designation == 5)}
 
 }

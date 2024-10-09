@@ -4,6 +4,15 @@
     <loc>/404.html</loc>
   </url>
   <url>
+    <loc>/articles/get_data_matchready.html</loc>
+  </url>
+  <url>
+    <loc>/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>/articles/inspect_sgics.html</loc>
+  </url>
+  <url>
     <loc>/authors.html</loc>
   </url>
   <url>
@@ -31,6 +40,9 @@
     <loc>/reference/inspect_codestructure.html</loc>
   </url>
   <url>
+    <loc>/reference/inspect_dupes.html</loc>
+  </url>
+  <url>
     <loc>/reference/inspect_invalid_codestructure.html</loc>
   </url>
   <url>
@@ -40,10 +52,19 @@
     <loc>/reference/inspect_schoolnumber.html</loc>
   </url>
   <url>
+    <loc>/reference/inspect_sex.html</loc>
+  </url>
+  <url>
     <loc>/reference/load_keydata.html</loc>
   </url>
   <url>
     <loc>/reference/recode_in_df.html</loc>
+  </url>
+  <url>
+    <loc>/reference/replace_nonalnum_in_df.html</loc>
+  </url>
+  <url>
+    <loc>/reference/report_dupes.html</loc>
   </url>
   <url>
     <loc>/reference/report_invalid_birthday.html</loc>
@@ -62,5 +83,14 @@
   </url>
   <url>
     <loc>/reference/report_invalid_schoolnumber.html</loc>
+  </url>
+  <url>
+    <loc>/reference/report_invalid_sex.html</loc>
+  </url>
+  <url>
+    <loc>/reference/sailor_keys.html</loc>
+  </url>
+  <url>
+    <loc>/reference/sailor_students.html</loc>
   </url>
 </urlset>

@@ -1,9 +1,7 @@
-#' report invalid birthday and -month components of strings
+#' report strings with invalid birthdate entries
 #'
 #' @param data a dataframe or tibble 
 #' @param code a string variable containing a SGIC
-#' @param start start position of birthdate
-#' @param end en position of birthdate
 #'
 #' @return a tibble containing only SGICs with invalid birthdates
 #' @export
@@ -17,16 +15,16 @@
 #' )
 #' 
 #' # report invalid birthdaymonths in code
-#' invalid_birthdaymonths <- report_invalid_birthdaymonth(data, "code", 6, 7)
+#' invalid_birthdaymonths <- report_invalid_birthdaymonth(data, "code")
 #' 
 #' # show results
 #' print(invalid_birthdaymonths)
 #' 
-report_invalid_birthdaymonth <- function(data, code, start, end) {
+report_invalid_birthdaymonth <- function(data, code) {
   birthdaymonth_valid <- NULL
   # inspect birthdate
   data <- data %>%
-    mutate(birthdaymonth_valid = inspect_birthdaymonth(!!sym(code), start, end))
+    mutate(birthdaymonth_valid = inspect_birthdaymonth(!!sym(code)))
   
   # extract invalid birthdate
   invalid_birthdaymonths <- data %>%

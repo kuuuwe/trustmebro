@@ -2,24 +2,20 @@
 % Please edit documentation in R/inspect_birthmonth.R
 \name{inspect_birthmonth}
 \alias{inspect_birthmonth}
-\title{inspect birthmonth component of a string}
+\title{inspect if a string contains only one number-component which represents a valid birthmonth}
 \usage{
-inspect_birthmonth(code, start, end)
+inspect_birthmonth(code)
 }
 \arguments{
 \item{code}{a string containing the SGIC}
-
-\item{start}{start position of birthmonth}
-
-\item{end}{end position of birthmonth}
 }
 \value{
-a logical value `TRUE` if the substring represents a valid birthmonth, otherwise `FALSE`.
+a logical value `TRUE` if the string contains only one valid birthmonth-component, otherwise `FALSE`.
 }
 \description{
-This function checks if a substring of a given code represents a valid birthmonth in the code
+This function checks if a string contains only one number-component which represents a valid birthmonth
 }
 \examples{
-inspect_birthmonth("DEF2802", 6, 7) # TRUE
-inspect_birthmonth("GHI3033", 6, 7) # FALSE
+inspect_birthmonth("DEF02") # TRUE
+inspect_birthmonth("GHI33") # FALSE
 }

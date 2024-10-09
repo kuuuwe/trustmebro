@@ -2,7 +2,7 @@
 % Please edit documentation in R/inspect_codestructure.R
 \name{inspect_codestructure}
 \alias{inspect_codestructure}
-\title{inspect code structure}
+\title{inspect whether a string matches an expected pattern}
 \usage{
 inspect_codestructure(code, pattern)
 }
@@ -15,8 +15,9 @@ inspect_codestructure(code, pattern)
 a logical value `TRUE` if the code matches the expected pattern, otherwise `FALSE`
 }
 \description{
-inspect code structure
+This function checks if a string matches an expected pattern
 }
 \examples{
 inspect_codestructure("ABC1234", "^[A-Za-z]{3}[0-9]{4}$") #TRUE
+inspect_codestructure("12DBG45FG", "^[A-Za-z]{3}[0-9]{4}$") #FALSE
 }
