@@ -2,7 +2,14 @@ Package: trustmebro
 Type: Package
 Title: inspect, report anf join SGICs
 Version: 0.1.0
-Author: Annemarie Pläschke, Tobias Brändle
+Authors@R: c(
+    person("Annemarie", "Pläschke", , "annemarie.plaeschke@ifbq.hamburg.de", role = c("aut", "cre"),
+      comment = c(ORCID = "0009-0005-7115-8790")
+    ),
+    person("Tobias", "Brändle", role = "aut",
+      comment = c(ORCID = "0000-0001-8872-9872")
+    )
+  )
 Maintainer: Annemarie Pläschke <annemarie.plaeschke@ifbq.hamburg.de>
 Description: this package contains helper functions to deal with SGIC-data
     Use four spaces when indenting paragraphs within the Description.
