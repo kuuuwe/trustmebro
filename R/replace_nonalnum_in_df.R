@@ -1,5 +1,5 @@
-#' Replace non-alphanumeric characters and remove spaces and tabs in character columns of a tibble or data frame, umlauts and eszett remain unchanged, empty strings get replaced
-#'
+#' Replace non-alphanumeric characters and remove spaces and tabs in character columns of a tibble or data frame
+#' 
 #' @param data A dataframe or tibble containing columns to be processed
 #' @param replacement The character or string to replace non-alphanumeric characters with. Default is "#"
 #' @param ... variables to prepare for matching
