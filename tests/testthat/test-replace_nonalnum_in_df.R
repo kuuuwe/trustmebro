@@ -5,7 +5,7 @@ test_that("replace_nonalnum_in_df removes spaces and replaces non-alphanumeric c
   # expected result
   expected_df <- tibble(
     
-    sgic = c("MUC##0308", "HÄT2701", "MUK3801", "SAM10", "T0601", 
+    sgic = c("MUC##0308", "H#T2701", "MUK3801", "SAM10", "T0601", 
              "UIT3006", "######", "#", "#", "MOA2210", 
              "MUK3801", "T0601"))
   # call function
@@ -35,7 +35,7 @@ test_that("replace_nonalnum_in_df allows custom replacement character", {
   # expected result
   expected_df <- tibble(
     
-    sgic = c("MUC$$0308", "HÄT2701", "MUK3801", "SAM10", "T0601", 
+    sgic = c("MUC$$0308", "H$T2701", "MUK3801", "SAM10", "T0601", 
              "UIT3006", "$$$$$$", "$", "$", "MOA2210", 
              "MUK3801", "T0601"))
   # call function
@@ -50,11 +50,26 @@ test_that("replace_nonalnum_in_df canbe used with pipe operator", {
   # expected result
   expected_df <- tibble(
     
-    sgic = c("MUC$$0308", "HÄT2701", "MUK3801", "SAM10", "T0601", 
+    sgic = c("MUC$$0308", "H$T2701", "MUK3801", "SAM10", "T0601", 
              "UIT3006", "$$$$$$", "$", "$", "MOA2210", 
              "MUK3801", "T0601"))
   # call function
   df_modified <- df %>% replace_nonalnum_in_df(sgic, replacement = "$")
+  # test equal
+  expect_equal(df_modified, expected_df)
+})
+
+test_that("replace_nonalnum_in_df can handle keep-parameters", {
+  # data
+  df <- sailor_students %>% select(sgic)
+  # expected result
+  expected_df <- tibble(
+    
+    sgic = c("MUC__0308", "HÄT2701", "MUK3801", "SAM10", "T0601", 
+             "UIT3006", "@@@@@@", "$", "$", "MOA2210", 
+             "MUK3801", "T0601"))
+  # call function
+  df_modified <- df %>% replace_nonalnum_in_df(sgic, replacement = "$", keep = "Ä_@")
   # test equal
   expect_equal(df_modified, expected_df)
 })

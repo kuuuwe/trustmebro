@@ -4,7 +4,7 @@
 \alias{replace_nonalnum_in_df}
 \title{Replace non-alphanumeric characters and remove spaces and tabs in character columns of a tibble or data frame, umlauts and eszett remain unchanged, empty strings get replaced}
 \usage{
-replace_nonalnum_in_df(data, ..., replacement = "#")
+replace_nonalnum_in_df(data, ..., replacement = "#", keep = "")
 }
 \arguments{
 \item{data}{A dataframe or tibble containing columns to be processed}
@@ -12,6 +12,8 @@ replace_nonalnum_in_df(data, ..., replacement = "#")
 \item{...}{variables to prepare for matching}
 
 \item{replacement}{The character or string to replace non-alphanumeric characters with. Default is "#"}
+
+\item{keep}{characters that shall not be replaced}
 }
 \value{
 A modified dataframe/ tibble with cleaned character columns

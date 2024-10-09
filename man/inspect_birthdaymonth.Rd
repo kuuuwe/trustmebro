@@ -4,16 +4,20 @@
 \alias{inspect_birthdaymonth}
 \title{inspect birthday and -month component of a string}
 \usage{
-inspect_birthdaymonth(code)
+inspect_birthdaymonth(code, format = "DDMM")
 }
 \arguments{
 \item{code}{a string containing the SGIC}
+
+\item{format}{A string specifying the format of the birthdate-components in code. 
+Use "DDMM" for day-month format and "MMDD" for month-day format. 
+Default is "DDMM".}
 }
 \value{
 a logical value `TRUE` if the string hat only one number-component representing a valid birthday and -month, otherwise `FALSE`.
 }
 \description{
-This function checks if a string contains only one number-component representing a valid combination of birthday followed by month
+This function checks if a string contains only one number-component representing a valid combination of birthday and birthmonth
 }
 \examples{
 inspect_birthdaymonth("DEF2802") # TRUE
