@@ -1,16 +1,20 @@
-#' inspect if a string contains only one number-component which represents a valid birthmonth
+#' Inspect birthmonth-component of a string
 #'
 #'@description
-#'This function checks if a string contains only one number-component which represents a valid birthmonth
+#' Check whether a given string contains exactly one two-digit number that represents a valid month of the year (between 01 and 12). 
+#' The string is assumed to be a code (e.g., a SGIC), which may include letters and digits.
+#' 
+#' @param code A character string containing a SGIC or similar code that may include a numeric birthmonth-component.
 #'
-#' @param code a string containing the SGIC
-#'
-#' @return a logical value `TRUE` if the string contains only one valid birthmonth-component, otherwise `FALSE`. 
+#' @return A logical value: `TRUE` if the string contains only one valid birthmonth-component (between 01 and 12), otherwise `FALSE`. 
 #' @export
 #'
 #' @examples
-#' inspect_birthmonth("DEF02") # TRUE
-#' inspect_birthmonth("GHI33") # FALSE
+#' inspect_birthday("DEF66") # FALSE - 66 is not a valid month
+#' inspect_birthday("GHI02") # TRUE - 02 (February) is a valid month
+#' inspect_birthday("ABC12DEF10") # FALSE - Multiple numeric components
+#' inspect_birthday("XYZ") # FALSE - No numeric component
+#' inspect_birthday("JKL11") # TRUE - 11 (November) is a valid day
 inspect_birthmonth <- function(code) {
   
   # check if input is a character

@@ -2,29 +2,37 @@
 % Please edit documentation in R/recode_valinvec.R
 \name{recode_valinvec}
 \alias{recode_valinvec}
-\title{recode a variable in a tibble / dataframe}
+\title{Recode a variable}
 \usage{
 recode_valinvec(data, var, recode_map, new_var)
 }
 \arguments{
-\item{data}{a tibble / dataframe}
+\item{data}{A data frame or tibble.}
 
-\item{var}{a variable to be recoded}
+\item{var}{A variable to be recoded.}
 
-\item{recode_map}{a names vector specifying the recode map}
+\item{recode_map}{A named vector specifying the recode map.}
 
-\item{new_var}{name of the new variable to be generated with the recoded values from 'recode_map'}
+\item{new_var}{Name of the new variable holding the recoded values.}
 }
 \value{
-a tibble  / dataframe with the new variable added
+A data frame or tibble with the new variable added.
 }
 \description{
-recode a variable in a tibble / dataframe
+Recode a specified variable in a data frame or tibble based on a provided recode map. 
+If the recode map is empty, the original variable is retained under a new name.
 }
 \examples{
+# Example data
 print(sailor_students)
+
+# Define a recode map for gender
 recode_map_gender <- c("Female" = "F", "Male" = "M", "Other" = "X")
+
+# Recode gender
 sailor_students_recoded <- 
 recode_valinvec(sailor_students, gender, recode_map_gender, recode_gender)
+
+# A tibble with a recoded gender variable
 print(sailor_students_recoded)
 }

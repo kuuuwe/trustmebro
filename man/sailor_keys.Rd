@@ -6,9 +6,9 @@
 \title{key data on students from the sailor moon universe}
 \format{
 `sailor_keys`
-A data frame with 12 rows and 6 columns:
+A tibble with 12 rows and 6 columns:
 \describe{
-  \item{schoolyeara}{schoolyear}
+  \item{schoolyear}{schoolyear}
   \item{guid}{hexadecimal ID number}
   \item{name, birthday, sex}{student information}
   \item{school, schoolnumber, class, grade_level}{school information}

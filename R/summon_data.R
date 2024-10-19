@@ -1,20 +1,28 @@
-#' load and filter data from an rds-file
+#' Load an RDS-file and select/filter Variables
 #'
-#' @param filepath path to the rds-file
-#' @param selection a list of variables to dplyr::select()
-#' @param ... filter conditions to apply on the data
+#' @description
+#' Read data from a RDS file, filter the resulting tibble based on the provided 
+#' filter conditions and optionally specify a list of variables to select from the data. 
+#' If the data is not already a tibble, it will be converted before any operations are performed.
 #'
-#' @return a filtered tibble
+#' @param filepath path to the rds-file to be loaded.
+#' @param selection An optional character vector of variable names to be selected from the data using `dplyr::select()`. 
+#' If not provided, all columns from the data will be retained.
+#' @param ... Additional filtering conditions that will be applied to the data using `dplyr::filter()`. 
+#'
+#' @return A filtered tibble containing the selected variables and rows that meet the specified filter conditions.
 #' @export
 #' @import dplyr
 #' @import tibble
 #'
 #' @examples
 #' 
-#' \dontrun{test <- summon_data(filepath = "my/path/keydata.rds",
+#' \dontrun{
+#' test <- summon_data(filepath = "my/path/keydata.rds",
 #' selection = c(year, GUID, schoolnumber, grade, class_designation, sex, sgic),
 #' year == 2324,
-#' class_designation == 5)}
+#' class_designation == 5
+#' )}
 #' 
 summon_data <- function(filepath, selection = NULL, ...) {
   #read RDS-file

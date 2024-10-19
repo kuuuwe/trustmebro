@@ -2,22 +2,22 @@
 % Please edit documentation in R/inspect_numberid.R
 \name{inspect_numericid}
 \alias{inspect_numericid}
-\title{inspect if a number has the expected length}
+\title{Inspect if a number has the expected length}
 \usage{
 inspect_numericid(number, expected_length)
 }
 \arguments{
-\item{number}{a numeric value}
+\item{number}{A numeric value.}
 
-\item{expected_length}{expected digits of schoolnumber}
+\item{expected_length}{An integer specifying the expected number of digits.}
 }
 \value{
-a logical value `TRUE` if the substring represents a valid schoolnumber, otherwise `FALSE`
+A logical value: `TRUE` if `number` has the expected length and consists only of digits, otherwise `FALSE`.
 }
 \description{
-inspect if a number has the expected length
+Check whether a given numeric value has the expected number of digits.
 }
 \examples{
-inspect_numericid(12345, 5)  # TRUE
-inspect_numericid(123456, 5)  # FALSE
+inspect_numericid(12345, 5)  # TRUE - 5 digits
+inspect_numericid(1234, 5)    # FALSE - 4 digits
 }

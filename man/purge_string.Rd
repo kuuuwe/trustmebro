@@ -2,28 +2,35 @@
 % Please edit documentation in R/purge_string.R
 \name{purge_string}
 \alias{purge_string}
-\title{Replace non-alphanumeric characters and remove spaces and tabs in character columns of a tibble or data frame}
+\title{Purge strings in a data frame}
 \usage{
 purge_string(data, ..., replacement = "#", keep = "")
 }
 \arguments{
-\item{data}{A dataframe or tibble containing columns to be processed}
+\item{data}{A dataframe or tibble containing columns to be cleaned.}
 
-\item{...}{variables to prepare for matching}
+\item{...}{Variables to clean. If none are provided, all character columns will be processed.}
 
-\item{replacement}{The character or string to replace non-alphanumeric characters with. Default is "#"}
+\item{replacement}{A character string used to replace unwanted characters and empty strings. Default is "#".}
 
-\item{keep}{characters that shall not be replaced}
+\item{keep}{A character string containing any additional characters that should be retained in the cleaned strings.}
 }
 \value{
-A modified dataframe/ tibble with cleaned character columns
+A data frame or tibble with the specified character columns cleaned and modified as per the given parameters.
 }
 \description{
-Replace non-alphanumeric characters and remove spaces and tabs in character columns of a tibble or data frame
+Clean specified character columns in a data frame or tibble by removing non-alphanumeric characters, 
+replacing them with a specified character (default is "#"). Also replaces NA values and allows for 
+additional characters to keep in the cleaned strings. The resulting strings are converted to uppercase.
 }
 \examples{
+# Example data
 print(sailor_students)
+
+# Clean all character columns, replacing unwanted characters with "#", retaining "-" 
 sailor_students_cleaned <- 
-purge_string(sailor_students, sgic, school, class, gender, replacement = "#")
+purge_string(sailor_students, sgic, school, class, gender, keep = "-")
+
+# Tibble with cleaned 'sgic', 'school', 'class' and 'gender' columns
 print(sailor_students_cleaned)
 }

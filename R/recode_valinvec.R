@@ -1,21 +1,32 @@
-#' recode a variable in a tibble / dataframe
+#' Recode a variable
 #'
-#' @param data a tibble / dataframe
-#' @param var a variable to be recoded
-#' @param recode_map a names vector specifying the recode map
-#' @param new_var name of the new variable to be generated with the recoded values from 'recode_map' 
+#' @description
+#' Recode a specified variable in a data frame or tibble based on a provided recode map. 
+#' If the recode map is empty, the original variable is retained under a new name.
 #'
-#' @return a tibble  / dataframe with the new variable added
+#' @param data A data frame or tibble.
+#' @param var A variable to be recoded.
+#' @param recode_map A named vector specifying the recode map.
+#' @param new_var Name of the new variable holding the recoded values.
+#'
+#' @return A data frame or tibble with the new variable added.
 #' @export
 #' @import dplyr 
 #' @import tibble
 #' @import rlang
 #'
 #' @examples
+#' # Example data
 #' print(sailor_students)
+#' 
+#' # Define a recode map for gender
 #' recode_map_gender <- c("Female" = "F", "Male" = "M", "Other" = "X")
+#' 
+#' # Recode gender
 #' sailor_students_recoded <- 
 #' recode_valinvec(sailor_students, gender, recode_map_gender, recode_gender)
+#' 
+#' # A tibble with a recoded gender variable
 #' print(sailor_students_recoded)
 recode_valinvec <- function(data, var, recode_map, new_var) {
   #is var in data?

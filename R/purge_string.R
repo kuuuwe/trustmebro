@@ -1,19 +1,29 @@
-#' Replace non-alphanumeric characters and remove spaces and tabs in character columns of a tibble or data frame
+#' Purge strings in a data frame
 #' 
-#' @param data A dataframe or tibble containing columns to be processed
-#' @param replacement The character or string to replace non-alphanumeric characters with. Default is "#"
-#' @param ... variables to prepare for matching
-#' @param keep characters that shall not be replaced
+#' @description
+#' Clean specified character columns in a data frame or tibble by removing non-alphanumeric characters, 
+#' replacing them with a specified character (default is "#"). Also replaces NA values and allows for 
+#' additional characters to keep in the cleaned strings. The resulting strings are converted to uppercase.
 #'
-#' @return A modified dataframe/ tibble with cleaned character columns
+#' @param data A dataframe or tibble containing columns to be cleaned.
+#' @param replacement A character string used to replace unwanted characters and empty strings. Default is "#".
+#' @param ... Variables to clean. If none are provided, all character columns will be processed.
+#' @param keep A character string containing any additional characters that should be retained in the cleaned strings.
+#'
+#' @return A data frame or tibble with the specified character columns cleaned and modified as per the given parameters.
 #' @export
 #' @import dplyr
 #' @import tibble
 #'
 #' @examples
+#' # Example data
 #' print(sailor_students)
+#' 
+#' # Clean all character columns, replacing unwanted characters with "#", retaining "-" 
 #' sailor_students_cleaned <- 
-#' purge_string(sailor_students, sgic, school, class, gender, replacement = "#")
+#' purge_string(sailor_students, sgic, school, class, gender, keep = "-")
+#' 
+#' # Tibble with cleaned 'sgic', 'school', 'class' and 'gender' columns
 #' print(sailor_students_cleaned)
 purge_string <- function(data, ..., replacement = "#", keep = "") {
   # Capture variables specified in ...

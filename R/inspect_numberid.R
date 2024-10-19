@@ -1,14 +1,17 @@
-#' inspect if a number has the expected length
+#' Inspect if a number has the expected length
 #'
-#' @param number a numeric value
-#' @param expected_length expected digits of schoolnumber
+#' @description
+#' Check whether a given numeric value has the expected number of digits.
 #'
-#' @return a logical value `TRUE` if the substring represents a valid schoolnumber, otherwise `FALSE`
+#' @param number A numeric value.
+#' @param expected_length An integer specifying the expected number of digits.
+#'
+#' @return A logical value: `TRUE` if `number` has the expected length and consists only of digits, otherwise `FALSE`.
 #' @export
 #'
 #' @examples
-#' inspect_numericid(12345, 5)  # TRUE
-#' inspect_numericid(123456, 5)  # FALSE
+#' inspect_numericid(12345, 5)  # TRUE - 5 digits
+#' inspect_numericid(1234, 5)    # FALSE - 4 digits
 inspect_numericid <- function(number, expected_length) {
   #check if schoolnumber is numeric
   is_numeric <- grepl("^[0-9]+$", as.character(number))

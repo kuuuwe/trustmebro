@@ -2,23 +2,24 @@
 % Please edit documentation in R/inspect_valinvec.R
 \name{inspect_valinvec}
 \alias{inspect_valinvec}
-\title{Inspect if a value is in a specified recode map}
+\title{Inspect if a value is in a recode map}
 \usage{
 inspect_valinvec(value, recode_map)
 }
 \arguments{
-\item{value}{A single value to inspect}
+\item{value}{A single value to inspect, which is checked against the keys of a recode map.}
 
-\item{recode_map}{A named vector where the names represent the keys to check against}
+\item{recode_map}{A named vector where the names represent the keys to check against. The values of the vector are ignored.}
 }
 \value{
-a logical value `TRUE` if the value is a key in the recode_map, otherwise `FALSE`
+A logical value: `TRUE` if the `value` is a key in the `recode_map`, otherwise `FALSE`.
 }
 \description{
-Inspect if a value is in a specified recode map
+Check whether a given value is present as a key in a specified recode map. 
+Inputs can be validated against a set of predefined categories or labels.
 }
 \examples{
 recode_map <- c(male = "M", female = "F")
-inspect_valinvec("male", recode_map) #TRUE
-inspect_valinvec("other", recode_map) #FALSE
+inspect_valinvec("female", recode_map) # TRUE - "female" is a key in the recode map
+inspect_valinvec("other", recode_map) # FALSE - "other" is not a key in the recode map
 }
