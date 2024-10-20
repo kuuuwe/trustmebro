@@ -1,4 +1,4 @@
-## code to prepare `sailor_students` dataset goes here
+# code to prepare `sailor_students` dataset
 library(tibble)
 
 sailor_students <- tibble(
