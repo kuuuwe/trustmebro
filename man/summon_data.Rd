@@ -18,7 +18,7 @@ If not provided, all columns from the data will be retained.}
 A filtered tibble containing the selected variables and rows that meet the specified filter conditions.
 }
 \description{
-Read data from a RDS file, filter the resulting tibble based on the provided 
+Read data from a RDS-file, filter the resulting tibble based on the provided 
 filter conditions and optionally specify a list of variables to select from the data. 
 If the data is not already a tibble, it will be converted before any operations are performed.
 }

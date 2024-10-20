@@ -1,7 +1,7 @@
 #' Load an RDS-file and select/filter Variables
 #'
 #' @description
-#' Read data from a RDS file, filter the resulting tibble based on the provided 
+#' Read data from a RDS-file, filter the resulting tibble based on the provided 
 #' filter conditions and optionally specify a list of variables to select from the data. 
 #' If the data is not already a tibble, it will be converted before any operations are performed.
 #'

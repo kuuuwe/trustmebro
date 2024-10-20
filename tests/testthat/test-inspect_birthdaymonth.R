@@ -1,3 +1,4 @@
+# common cases
 test_that("inspect_birthdaymonth detects if birthday and birthmonth are correctly provided", {
   expect_equal(inspect_birthdaymonth("KNE1612"), TRUE)
   expect_equal(inspect_birthdaymonth("ALS3102"), FALSE)
