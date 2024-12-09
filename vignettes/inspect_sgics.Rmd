@@ -41,7 +41,7 @@ sailor_students
 
 # SGIC Plausibility
 
-The variable `sigc` holds the SGICs created by students. Students were instructed to create a string of seven characters consisting of three characters, namely:
+The variable `sgic` holds the SGICs created by students. Students were instructed to create a string of seven characters consisting of three characters, namely:
 
 -   First letter of given name (1st character)
 -   Last letter of given name (2nd character)
@@ -62,8 +62,7 @@ sailor_students %>%
   mutate(structure_check = 
            inspect_characterid(
              sgic, pattern = "^[A-Za-z]{3}[0-9]{4}$")) %>%
-  select(sigc, structure_check) %>%
-  view()
+  select(sgic, structure_check)
 ```
 
 
