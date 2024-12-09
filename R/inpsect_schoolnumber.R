@@ -5,11 +5,7 @@
 #' @param schoolnumber a numeric value
 #' @param expected_length expected digits of schoolnumber
 #'
-<<<<<<< HEAD
 #' @return A logical value `TRUE` if the school_number has the expected length, otherwise `FALSE`.
-=======
-#' @return a logical value `TRUE` if the substring represents a valid schoolnumber, otherwise `FALSE`
->>>>>>> kuwehome
 #' @export
 #'
 #' @examples
