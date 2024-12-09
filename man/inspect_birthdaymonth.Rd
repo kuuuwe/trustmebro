@@ -2,21 +2,30 @@
 % Please edit documentation in R/inspect_birthdaymonth.R
 \name{inspect_birthdaymonth}
 \alias{inspect_birthdaymonth}
-\title{inspect birthday and -month component of a string}
+\title{Inspect birthday- and birthmonth-component of a string}
 \usage{
-inspect_birthdaymonth(code)
+inspect_birthdaymonth(code, format = "DDMM")
 }
 \arguments{
-\item{code}{a string containing the SGIC}
+\item{code}{A character string containing a SGIC or similar code that may include a numeric component representing a birthday and birthmonth.}
+
+\item{format}{A string specifying the format of the birthdate-components in code. 
+Use "DDMM" for day-month format and "MMDD" for month-day format. 
+Default is "DDMM".}
 }
 \value{
-a logical value `TRUE` if the string hat only one number-component representing a valid birthday and -month, otherwise `FALSE`.
+A logical value: `TRUE` if the string contains exactly one valid numeric component that forms a valid birthday (day and month), otherwise `FALSE`.
 }
 \description{
-This function checks if a string contains only one number-component representing a valid combination of birthday followed by month
+Checks whether a given string contains exactly one four-digit number representing a valid combination of a day (birthday) and a month (birthmonth).
+Numeric components can be interpreted in either "DDMM" (day-month) or "MMDD" (month-day) format, depending on the specified format.
+The string is assumed to be a code (e.g., a SGIC), which may include letters and digits.
 }
 \examples{
-inspect_birthdaymonth("DEF2802") # TRUE
-inspect_birthdaymonth("GHI3002") # FALSE
-
+inspect_birthdaymonth("DEF2802") # TRUE - 28th of February is a valid date
+inspect_birthdaymonth("GHI3002") # FALSE - 30th of February is invalid
+inspect_birthdaymonth("XYZ3112") # TRUE - 31st of December is valid
+inspect_birthdaymonth("18DEF02") # FALSE - Multiple numeric components
+inspect_birthdaymonth("XYZ") # FALSE - No numeric components
+inspect_birthdaymonth("ABC1231", format = "MMDD") # TRUE - December 31st is valid
 }

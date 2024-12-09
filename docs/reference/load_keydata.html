@@ -40,7 +40,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>load and filter data from an rds-file</h1>
       
-      <div class="d-none name"><code>load_keydata.Rd</code></div>
+      <div class="d-none name"><code>summon_data.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
@@ -49,7 +49,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">load_keydata</span><span class="op">(</span><span class="va">filepath</span>, selection <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">summon_data</span><span class="op">(</span><span class="va">filepath</span>, selection <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -76,7 +76,7 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="va">test</span> <span class="op">&lt;-</span> <span class="fu">load_keydata</span><span class="op">(</span>filepath <span class="op">=</span> <span class="st">"my/path/keydata.rds"</span>,</span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="va">test</span> <span class="op">&lt;-</span> <span class="fu">summon_data</span><span class="op">(</span>filepath <span class="op">=</span> <span class="st">"my/path/keydata.rds"</span>,</span></span>
 <span class="r-in"><span>selection <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">year</span>, <span class="va">GUID</span>, <span class="va">schoolnumber</span>, <span class="va">grade</span>, <span class="va">class_designation</span>, <span class="va">sex</span>, <span class="va">sgic</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span><span class="va">year</span> <span class="op">==</span> <span class="fl">2324</span>,</span></span>
 <span class="r-in"><span><span class="va">class_designation</span> <span class="op">==</span> <span class="fl">5</span><span class="op">)</span></span></span>

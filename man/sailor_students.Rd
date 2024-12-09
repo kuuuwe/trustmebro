@@ -6,13 +6,13 @@
 \title{assessment data on students from the sailor moon universe}
 \format{
 `sailor_students`
-A data frame with 12 rows and 6 columns:
+A tibble with 12 rows and 6 columns:
 \describe{
   \item{sgic}{Subjec generated ID}
   \item{school}{schoolnumber}
   \item{class}{class designation}
   \item{gender}{gender}
-  \item{testscore_lannguage, testscore_calculus}{testscores}
+  \item{testscore_language, testscore_calculus}{testscores}
 }
 }
 \usage{

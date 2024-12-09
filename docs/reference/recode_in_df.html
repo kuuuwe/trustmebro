@@ -40,7 +40,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>recode a variable in a tibble / dataframe</h1>
       
-      <div class="d-none name"><code>recode_in_df.Rd</code></div>
+      <div class="d-none name"><code>recode_valinvec.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
@@ -49,7 +49,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">recode_in_df</span><span class="op">(</span><span class="va">data</span>, <span class="va">var</span>, <span class="va">recode_map</span>, <span class="va">new_var</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">recode_valinvec</span><span class="op">(</span><span class="va">data</span>, <span class="va">var</span>, <span class="va">recode_map</span>, <span class="va">new_var</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -96,7 +96,7 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> <span style="color: #949494;">"</span>MUK3801<span style="color: #949494;">"</span>        22345  <span style="color: #949494;">"</span>2-B<span style="color: #949494;">"</span>   <span style="color: #949494;">"</span>Femal…               <span style="text-decoration: underline;">9</span>586                934</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> <span style="color: #949494;">"</span>T0601<span style="color: #949494;">"</span>          65432  <span style="color: #949494;">"</span>1-C<span style="color: #949494;">"</span>   <span style="color: #949494;">"</span>Femal…                 <span style="color: #BB0000;">NA</span>                764</span>
 <span class="r-in"><span><span class="va">recode_map_gender</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Female"</span> <span class="op">=</span> <span class="st">"F"</span>, <span class="st">"Male"</span> <span class="op">=</span> <span class="st">"M"</span>, <span class="st">"Other"</span> <span class="op">=</span> <span class="st">"X"</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">sailor_students_recoded</span> <span class="op">&lt;-</span> <span class="fu">recode_in_df</span><span class="op">(</span><span class="va">sailor_students</span>, <span class="va">gender</span>, <span class="va">recode_map_gender</span>, <span class="va">recode_gender</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">sailor_students_recoded</span> <span class="op">&lt;-</span> <span class="fu">recode_valinvec</span><span class="op">(</span><span class="va">sailor_students</span>, <span class="va">gender</span>, <span class="va">recode_map_gender</span>, <span class="va">recode_gender</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">sailor_students_recoded</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 12 × 7</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    sgic  school class gender testscore_langauge testscore_calculus recode_gender</span>

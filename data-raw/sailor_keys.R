@@ -1,4 +1,4 @@
-## code to prepare `sailor_keys` dataset goes here
+# code to prepare `sailor_keys` dataset
 library(tibble)
 
 sailor_keys <- tibble(

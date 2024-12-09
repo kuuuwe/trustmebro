@@ -2,20 +2,24 @@
 % Please edit documentation in R/inspect_birthday.R
 \name{inspect_birthday}
 \alias{inspect_birthday}
-\title{inspect if a string contains only one number-component which represents a valid birthday}
+\title{Inspect birthday-component of a string}
 \usage{
 inspect_birthday(code)
 }
 \arguments{
-\item{code}{a string containing the SGIC}
+\item{code}{A character string containing a SGIC or similar code that may include a numeric birthday-component.}
 }
 \value{
-a logical value `TRUE` if the string contains only one valid birthday-component, otherwise `FALSE`.
+A logical value: `TRUE` if the string contains only one valid birthday-component (between 01 and 31), otherwise `FALSE`.
 }
 \description{
-This function checks if a string contains only one number-component which represents a valid birthday
+Check whether a given string contains exactly one two-digit number that represents a valid day of the month (between 01 and 31). 
+The string is assumed to be a code (e.g., a SGIC), which may include letters and digits.
 }
 \examples{
-inspect_birthday("DEF66") # FALSE
-inspect_birthday("GHI02") # TRUE
+inspect_birthday("DEF66") # FALSE - 66 is not a valid day
+inspect_birthday("GHI02") # TRUE - 02 is a valid day
+inspect_birthday("ABC12DEF34") # FALSE - Multiple numeric components
+inspect_birthday("XYZ") # FALSE - No numeric component
+inspect_birthday("JKL31") # TRUE - 31 is a valid day
 }
