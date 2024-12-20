@@ -4,13 +4,19 @@
     <loc>/404.html</loc>
   </url>
   <url>
+    <loc>/articles/get data matchready.html</loc>
+  </url>
+  <url>
     <loc>/articles/get_data_matchready.html</loc>
   </url>
   <url>
     <loc>/articles/index.html</loc>
   </url>
   <url>
-    <loc>/articles/inspect_sgics.html</loc>
+    <loc>/articles/Inspect SGICs.html</loc>
+  </url>
+  <url>
+    <loc>/articles/Inspect_SGICs.html</loc>
   </url>
   <url>
     <loc>/authors.html</loc>
@@ -59,6 +65,9 @@
   </url>
   <url>
     <loc>/reference/inspect_letters.html</loc>
+  </url>
+  <url>
+    <loc>/reference/inspect_numberid.html</loc>
   </url>
   <url>
     <loc>/reference/inspect_numericid.html</loc>

@@ -3,6 +3,6 @@ pkgdown: 2.0.9
 pkgdown_sha: ~
 articles:
   get_data_matchready: get_data_matchready.html
-  inspect_sgics: inspect_sgics.html
-last_built: 2024-11-10T15:21Z
+  Inspect_SGICs: Inspect_SGICs.html
+last_built: 2024-12-20T04:41Z
 

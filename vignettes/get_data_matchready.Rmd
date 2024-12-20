@@ -1,8 +1,8 @@
 ---
-title: "get data matchready"
+title: "Get Data Matchready"
 output: rmarkdown::html_vignette
 description: >
-  This vingette shows you how to use the package for preparing data to be linked via error-tolerant matching 
+  This vingette shows you how to use the package for preparing datasets to be linked 
 vignette: >
   %\VignetteIndexEntry{get_data_matchready}
   %\VignetteEngine{knitr::rmarkdown}
@@ -16,16 +16,17 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-library(trustmebro)
-library(dplyr)
-```
+Most of the time, significant data cleaning is required before we can link data sets from different sources. In this vignette, we’ll show you how our package can help prepare your SGIC data.
 
-Most of the time, a lot of data cleaning has to take place before we can finally link datasets from different sources. In this vingette we show you how our package may be helpful to prepare your SGIC-data.
+We\`ll start by loading trustmebro:
+
+```{r setup, message=FALSE}
+library(trustmebro)
+```
 
 # Load key data
 
-Our key data set `sailor_keys` is a longitudinal data set in long format. To link this key data to data collected at a certain time with certain characteristics. We don't want to load the whole dataset in our environment. To only load in our environment what we really need, We can use `summon_data`to select variables and filter rows:
+Our key data set `trustmebro::sailor_keys` is a longitudinal data set in long format. To link this key data to survey data collected at a certain time with certain characteristics, we don't want to load the whole dataset in our environment. To only load in our environment what we really need, We can use `trustmebro::summon_data` to select variables and filter rows:
 
 ```{r, eval = FALSE}
 summon_data(filepath = "my/path/keydata.rds",
@@ -36,7 +37,7 @@ summon_data(filepath = "my/path/keydata.rds",
 
 # Replace non-alphanumeric characters you don't want to deal with
 
-Strings in survey data often contain whitespace and characters that should not be there in the first place. We can replace all non-alphanumeric characters in string-variables of our data using `purge_string`:
+Strings in survey data often contain whitespace and characters that should not be there in the first place. We can replace all non-alphanumeric characters in string-variables of our data set `trustmebro::sailor_students` using `trustmebro::purge_string`:
 
 ```{r}
 purge_string(sailor_students, replacement = "#")
@@ -46,13 +47,14 @@ Please note that since we deal with data collected in Germany, umlauts remain un
 
 # Recode variables
 
-Some variables might need to be recoded for further matching. We can provide a recode map:
+Some variables might need to be recoded for further processing. We can provide a recode map:
 
 ```{r}
 recode_map <- c(Male = "M", Female = "F")
 ```
 
-And pass it to `recode_valinvec` to recode the values accordingly. A new column will be added that contains the recoded values
+The recode_map is a named vector where the names represent categories (in this case, "Male" and "Female"), and the values ("M" and "F") are the corresponding codes used for those categories. It is used to map full category labels to shorter, standardized values.
+We can pass it to `trustmebro::recode_valinvec`, to recode the values accordingly. A new variable will be added that contains the recoded values
 
 ```{r}
 recode_valinvec(sailor_students, gender, recode_map, gender_recode)
