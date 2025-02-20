@@ -19,7 +19,7 @@ sailor_students <- tibble(
              NA, "Female", "   Female", "Female", "Female",
              "Female", "Female"),
   
-  testscore_langauge = c(425, 4596, 2456, 2345, 1234,
+  testscore_language = c(425, 4596, 2456, 2345, 1234,
                          123, 56, 986, 284, 105,
                          9586, NA),
   
