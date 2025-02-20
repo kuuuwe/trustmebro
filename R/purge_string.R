@@ -5,7 +5,7 @@
 #' replacing them with a specified character (default is "#"). Also replaces NA values and allows for 
 #' additional characters to keep in the cleaned strings. The resulting strings are converted to uppercase.
 #'
-#' @param data A dataframe or tibble containing columns to be cleaned.
+#' @param data A data frame or tibble containing columns to be cleaned.
 #' @param replacement A character string used to replace unwanted characters and empty strings. Default is "#".
 #' @param ... Variables to clean. If none are provided, all character columns will be processed.
 #' @param keep A character string containing any additional characters that should be retained in the cleaned strings.
