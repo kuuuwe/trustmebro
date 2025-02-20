@@ -16,7 +16,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-When using SGICs (Subject Generated ID-Codes) to link survey data from different sources, it's crucial to validate these identifiers to ensure accurate data cleaning and finally perform reliable data linkage. This vignette shows you:
+Linking survey data with SGICs (Subject Generated Identification-Codes)? Awesome! Just remember, you need to validate those IDs. That's how you get clean data and make sure the link-up goes smoothly.
+
+This vignette shows you:
 
 -   How to perform plausibility checks on different SGIC components.
 
@@ -24,7 +26,7 @@ When using SGICs (Subject Generated ID-Codes) to link survey data from different
 
 -   How to detect duplicate cases using a combination of variables as unique identifiers.
 
-To check the plausibility of ID-related variables in a dataset, `trustmebro` provides several functions beginning with the prefix _inspect_. Every _inspect_-function returns a boolean value, indicating whether a value has passed or failed the plausibility check.
+To check the plausibility of ID-related variables in a dataset, `trustmebro` provides several functions beginning with the prefix *inspect*. Every *inspect*-function returns a boolean value, indicating whether a value has passed or failed the plausibility check.
 
 We\`ll start by loading trustmebro and dplyr:
 
@@ -43,11 +45,11 @@ sailor_students
 
 # SGIC Plausibility
 
-The variable `sgic` holds SGICs created by students. Each SGIC is a seven-character string created according to the following instructions:
+The variable `sgic` stores SGICs created by students. Each SGIC is a seven-character string created according to the following instructions:
 
 Characters 1-3 (letters):
 
--    First letter of given name (1st character)
+-   First letter of given name (1st character)
 
 -   Last letter of given name (2nd character)
 
@@ -57,7 +59,7 @@ Characters 4-7 (digits):
 
 -   Birthday (4th and 5th character)
 
--   Birthmonth (6th and 7th character)
+-   Month of birth (6th and 7th character)
 
 ## Check Character IDs
 
@@ -75,7 +77,7 @@ We created `trustmebro::inspect_characterid` with SGICs in mind, but of course, 
 
 ## Check Birthdate-Components
 
-Since the SGIC should end with a birth-date, you can verify the plausibility of this birth-date using `trustmebro::inspect_birthdaymonth`. This function checks if a string contains exactly four digits representing a valid birth-date. As before, you can combine `trustmebro::inspect_birthdaymonth` with `dplyr::mutate` to generate a plausibility check variable:
+Since the SGIC should end with a date of birth, you can verify the plausibility of this date of birth using `trustmebro::inspect_birthdaymonth`. This function checks if a string contains exactly four digits representing a valid date of birth. As before, you can combine `trustmebro::inspect_birthdaymonth` with `dplyr::mutate` to generate a plausibility check variable:
 
 ```{r}
 sailor_students %>% 
@@ -84,7 +86,7 @@ sailor_students %>%
   select(sgic, birthdate_check)
 ```
 
-Some SIGCs only use the single day or month a person was born. In this case, you can use of `trustmebro::inspect_birthday` or `trustmebro::inspect_birthmonth` accordingly. 
+Some SIGCs only use the single day or month a person was born. In this case, you can use of `trustmebro::inspect_birthday` or `trustmebro::inspect_birthmonth` accordingly.
 
 # Non-SGIC variables' plausibility
 
@@ -101,7 +103,7 @@ sailor_students %>%
   select(school, school_check)
 ```
 
-## Check if Value Exists in a recode Map
+## Check the presence of a value within the recode map
 
 In the process of using non-SGIC variables as identifiers, categorical data is often recoded to ensure consistency within a workflow. We can use `trustmebro::inspect_valinvec` to check if a value exists in a recode map. The recode map should be a named vector, where the names represent the keys. In our dataset, we want to inspect if all values in `gender` conform to this recode map:
 
@@ -120,10 +122,9 @@ sailor_students %>%
 
 # Identify Duplicate Cases
 
-So far, we've checked if `SGIC`, `school` and `gender` contain plausible values. Next, we want to ensure that these variables, when used together as identifiers, uniquely identify a single case and that there are no duplicate entries based on these variables. `trustmebro::find_dupes` checks whether the combination of identifiers is unique by adding a has_dupes variable to the dataset. To find duplicates in your data, use it like this:
+So far, we've checked if `SGIC`, `school` and `gender` contain plausible values. Last, we want to ensure that these variables, when used together as identifiers, uniquely identify a single case and that there are no duplicate entries based on these variables. `trustmebro::find_dupes` checks whether the combination of identifiers is unique by adding a has_dupes variable to the dataset. To find duplicates in your data, use it like this:
 
 ```{r}
 sailor_students %>% find_dupes(school, sgic, gender) %>%
   select(school, sgic, gender, has_dupes)
 ```
-

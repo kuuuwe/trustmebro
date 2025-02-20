@@ -7,10 +7,10 @@
 inspect_birthmonth(code)
 }
 \arguments{
-\item{code}{A character string containing a SGIC or similar code that may include a numeric birthmonth-component.}
+\item{code}{A character string containing a SGIC or similar code that may include a numeric birth month-component.}
 }
 \value{
-A logical value: `TRUE` if the string contains only one valid birthmonth-component (between 01 and 12), otherwise `FALSE`.
+A logical value: `TRUE` if the string contains only one valid birth month-component (between 01 and 12), otherwise `FALSE`.
 }
 \description{
 Check whether a given string contains exactly one two-digit number that represents a valid month of the year (between 01 and 12). 

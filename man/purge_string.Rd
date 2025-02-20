@@ -7,7 +7,7 @@
 purge_string(data, ..., replacement = "#", keep = "")
 }
 \arguments{
-\item{data}{A dataframe or tibble containing columns to be cleaned.}
+\item{data}{A data frame or tibble containing columns to be cleaned.}
 
 \item{...}{Variables to clean. If none are provided, all character columns will be processed.}
 
