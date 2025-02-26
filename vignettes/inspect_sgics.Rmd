@@ -86,7 +86,7 @@ sailor_students %>%
   select(sgic, birthdate_check)
 ```
 
-Some SIGCs only use the single day or month a person was born. In this case, you can use of `trustmebro::inspect_birthday` or `trustmebro::inspect_birthmonth` accordingly.
+Some SGICs only use the single day or month a person was born. In this case, you can use of `trustmebro::inspect_birthday` or `trustmebro::inspect_birthmonth` accordingly.
 
 # Non-SGIC variables' plausibility
 

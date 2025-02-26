@@ -6,7 +6,7 @@
 #' @format `sailor_students`
 #' A tibble with 12 rows and 6 columns:
 #' \describe{
-#'   \item{sgic}{Subjec generated ID}
+#'   \item{sgic}{Subject generated ID}
 #'   \item{school}{schoolnumber}
 #'   \item{class}{class designation}
 #'   \item{gender}{gender}
