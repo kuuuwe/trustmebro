@@ -1,12 +1,12 @@
 #' assessment data on students from the sailor moon universe
 #'
 #' @description
-#' A fictional assessment dataset.
+#' A fictional assessment data set.
 #'
 #' @format `sailor_students`
 #' A tibble with 12 rows and 6 columns:
 #' \describe{
-#'   \item{sgic}{Subjec generated ID}
+#'   \item{sgic}{Subject generated ID}
 #'   \item{school}{schoolnumber}
 #'   \item{class}{class designation}
 #'   \item{gender}{gender}
@@ -18,7 +18,7 @@
 #' key data on students from the sailor moon universe
 #'
 #' @description
-#' A fictional key dataset.
+#' A fictional key data set.
 #'
 #' @format `sailor_keys`
 #' A tibble with 12 rows and 6 columns:

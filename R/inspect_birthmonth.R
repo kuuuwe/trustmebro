@@ -4,9 +4,9 @@
 #' Check whether a given string contains exactly one two-digit number that represents a valid month of the year (between 01 and 12). 
 #' The string is assumed to be a code (e.g., a SGIC), which may include letters and digits.
 #' 
-#' @param code A character string containing a SGIC or similar code that may include a numeric birthmonth-component.
+#' @param code A character string containing a SGIC or similar code that may include a numeric birth month-component.
 #'
-#' @return A logical value: `TRUE` if the string contains only one valid birthmonth-component (between 01 and 12), otherwise `FALSE`. 
+#' @return A logical value: `TRUE` if the string contains only one valid birth month-component (between 01 and 12), otherwise `FALSE`. 
 #' @export
 #'
 #' @examples

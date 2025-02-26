@@ -10,9 +10,9 @@
 #' @export
 #'
 #' @examples
-#' inspect_numericid(12345, 5)  # TRUE - 5 digits
-#' inspect_numericid(1234, 5)    # FALSE - 4 digits
-inspect_numericid <- function(number, expected_length) {
+#' inspect_numberid(12345, 5)  # TRUE - 5 digits
+#' inspect_numberid(1234, 5)    # FALSE - 4 digits
+inspect_numberid <- function(number, expected_length) {
   #check if schoolnumber is numeric
   is_numeric <- grepl("^[0-9]+$", as.character(number))
   
