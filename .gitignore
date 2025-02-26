@@ -1,6 +1,11 @@
 .Rproj.user
 docs
 inst/doc
+<<<<<<< HEAD
+=======
+/doc/
+/Meta/
+>>>>>>> a8ca157255bc65772c51bd699b18db3672e51481
 .Rhistory
 .Rdata
 .httr-oauth

@@ -26,6 +26,6 @@ print(sailor_students)
 # Find duplicate cases based on 'sgic', 'school' and 'class'
 sailor_students_dupes <- find_dupes(sailor_students, sgic, school, class)
 
-# Rows where 'has_dupes' is TRUE indicate duplicates based on the provided columns
+# Rows where 'has_dupes' is `TRUE` indicate duplicates based on the provided columns
 print(sailor_students_dupes)
 }

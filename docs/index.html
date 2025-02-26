@@ -41,8 +41,8 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="articles/get_data_matchready.html">get data matchready</a>
-    <a class="dropdown-item" href="articles/inspect_sgics.html">inspect SGICs</a>
+    <a class="dropdown-item" href="articles/get_data_matchready.html">Get Data Matchready</a>
+    <a class="dropdown-item" href="articles/inspect_sgics.html">Inspect SGICs</a>
   </div>
 </li>
       </ul>
@@ -62,8 +62,23 @@
 </h1></div>
 <p>trustmebro is designed to make data wrangling with ID-related aspects more comfortable. This package provides functions that make it easy to inspect various subject-generated ID codes (SGIC) for plausibility. It also helps with inspecting other common identifiers, ensuring that your data stays clean and reliable. Beyond plausibility checks, trustmebro offers a few tools for smooth data import and convenient recoding.</p>
 <p>If you’re working with messy IDs, this package got you covered. Trust me, bro!</p>
+<div class="section level3">
+<h3 id="context-and-use">Context and Use<a class="anchor" aria-label="anchor" href="#context-and-use"></a>
+</h3>
+<p>trustmebro was developed specifically for data linkage at the trusted third party (Vertrauensstelle: <a href="https://ifbq.hamburg.de/datenmanagement/vertrauensstelle/" class="external-link uri">https://ifbq.hamburg.de/datenmanagement/vertrauensstelle/</a>) at the Authority for Schools and Vocational Education of Hamburg, Germany (Behörde für Schule und Berufsbildung Hamburg). We use this package ourselves exclusively for linking student data for research purposes.</p>
+</div>
+<div class="section level3">
+<h3 id="inspecting-ids">Inspecting IDs<a class="anchor" aria-label="anchor" href="#inspecting-ids"></a>
+</h3>
+<p>trustmebro offers several functions for checking the plausibility of SGICs and other variables that might be used as identifiers. Best check out <code>vignette(trustmebro::Inspect_SGICs)</code> to learn how to perform plausibility checks on your IDs.</p>
+</div>
+<div class="section level3">
+<h3 id="comfy-stuff">Comfy Stuff<a class="anchor" aria-label="anchor" href="#comfy-stuff"></a>
+</h3>
+<p>trustmebro also comes with a few functions which make our day-to-day business about messy data more comfortable. If you want to be comfy while loading and recoding data, take a look at <code>vignette(trustmebro::Get_data_matchready)</code>.</p>
 <!-- badges: start -->
 
+</div>
 </div>
   </main><aside class="col-md-3"><div class="license">
 <h2 data-toc-skip>License</h2>

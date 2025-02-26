@@ -19,6 +19,6 @@ A tibble with 12 rows and 6 columns:
 sailor_keys
 }
 \description{
-A fictional key dataset.
+A fictional key data set.
 }
 \keyword{datasets}
