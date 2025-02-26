@@ -32,8 +32,6 @@ Imports:
     tibble,
     rlang
 VignetteBuilder: knitr
-<<<<<<< HEAD
 URL: https://kuuuwe.github.io/trustmebro/
-=======
 Language: en-US
->>>>>>> a8ca157255bc65772c51bd699b18db3672e51481
+
