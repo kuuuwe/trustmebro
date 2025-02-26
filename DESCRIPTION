@@ -31,3 +31,4 @@ Imports:
     tibble,
     rlang
 VignetteBuilder: knitr
+URL: https://kuuuwe.github.io/trustmebro/
