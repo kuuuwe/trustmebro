@@ -1,108 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/articles/get_data_matchready.html</loc>
-  </url>
-  <url>
-    <loc>/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>/articles/inspect_sgics.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/reference/clean_string.html</loc>
-  </url>
-  <url>
-    <loc>/reference/clean_strings_in_df.html</loc>
-  </url>
-  <url>
-    <loc>/reference/find_dupes.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/inspect_birthday.html</loc>
-  </url>
-  <url>
-    <loc>/reference/inspect_birthdaymonth.html</loc>
-  </url>
-  <url>
-    <loc>/reference/inspect_birthmonth.html</loc>
-  </url>
-  <url>
-    <loc>/reference/inspect_characterid.html</loc>
-  </url>
-  <url>
-    <loc>/reference/inspect_codestructure.html</loc>
-  </url>
-  <url>
-    <loc>/reference/inspect_invalid_codestructure.html</loc>
-  </url>
-  <url>
-    <loc>/reference/inspect_letters.html</loc>
-  </url>
-  <url>
-    <loc>/reference/inspect_numberid.html</loc>
-  </url>
-  <url>
-    <loc>/reference/inspect_schoolnumber.html</loc>
-  </url>
-  <url>
-    <loc>/reference/inspect_valinvec.html</loc>
-  </url>
-  <url>
-    <loc>/reference/load_keydata.html</loc>
-  </url>
-  <url>
-    <loc>/reference/purge_string.html</loc>
-  </url>
-  <url>
-    <loc>/reference/recode_in_df.html</loc>
-  </url>
-  <url>
-    <loc>/reference/recode_valinvec.html</loc>
-  </url>
-  <url>
-    <loc>/reference/report_invalid_birthday.html</loc>
-  </url>
-  <url>
-    <loc>/reference/report_invalid_birthdaymonth.html</loc>
-  </url>
-  <url>
-    <loc>/reference/report_invalid_birthmonth.html</loc>
-  </url>
-  <url>
-    <loc>/reference/report_invalid_codestructure.html</loc>
-  </url>
-  <url>
-    <loc>/reference/report_invalid_letters.html</loc>
-  </url>
-  <url>
-    <loc>/reference/report_invalid_schoolnumber.html</loc>
-  </url>
-  <url>
-    <loc>/reference/sailor_keys.html</loc>
-  </url>
-  <url>
-    <loc>/reference/sailor_students.html</loc>
-  </url>
-  <url>
-    <loc>/reference/summon_data.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://kuuuwe.github.io/trustmebro/404.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/articles/get_data_matchready.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/articles/index.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/articles/inspect_sgics.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/authors.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/index.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/LICENSE-text.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/LICENSE.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/clean_string.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/clean_strings_in_df.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/find_dupes.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/index.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/inspect_birthday.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/inspect_birthdaymonth.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/inspect_birthmonth.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/inspect_characterid.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/inspect_codestructure.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/inspect_invalid_codestructure.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/inspect_letters.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/inspect_numberid.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/inspect_schoolnumber.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/inspect_valinvec.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/load_keydata.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/purge_string.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/recode_in_df.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/recode_valinvec.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/report_invalid_birthday.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/report_invalid_birthdaymonth.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/report_invalid_birthmonth.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/report_invalid_codestructure.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/report_invalid_letters.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/report_invalid_schoolnumber.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/sailor_keys.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/sailor_students.html</loc></url>
+<url><loc>https://kuuuwe.github.io/trustmebro/reference/summon_data.html</loc></url>
 </urlset>
+
