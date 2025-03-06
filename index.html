@@ -6,6 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>inspect and clean SGIC-related data • trustmebro</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
@@ -54,9 +60,16 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header">
-<img src="logo.png" class="logo" alt=""><h1 id="trustmebro">trustmebro<a class="anchor" aria-label="anchor" href="#trustmebro"></a>
+<img src="logo.png" class="logo" alt=""><h1 id="trustmebro-">trustmebro 
+<a class="anchor" aria-label="anchor" href="#trustmebro-"></a>
 </h1>
 </div>
+<!-- badges: start -->
+
+<!-- badges: end -->
+<div class="section level2">
+<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h2>
 <p>trustmebro is designed to make data wrangling with ID-related aspects more comfortable. This package provides functions that make it easy to inspect various subject-generated ID codes (SGIC) for plausibility. It also helps with inspecting other common identifiers, ensuring that your data stays clean and reliable. Beyond plausibility checks, trustmebro offers a few tools for smooth data import and convenient recoding.</p>
 <p>If you’re working with messy IDs, this package got you covered. Trust me, bro!</p>
 <div class="section level3">
@@ -67,14 +80,27 @@
 <div class="section level3">
 <h3 id="inspecting-ids">Inspecting IDs<a class="anchor" aria-label="anchor" href="#inspecting-ids"></a>
 </h3>
-<p>trustmebro offers several functions for checking the plausibility of SGICs and other variables that might be used as identifiers. Best check out <code>vignette(trustmebro::Inspect_SGICs)</code> to learn how to perform plausibility checks on your IDs.</p>
+<p>trustmebro offers several functions for checking the plausibility of SGICs and other variables that might be used as identifiers. Best check out <code>vignette(trustmebro::inspect_sgics)</code> to learn how to perform plausibility checks on your IDs.</p>
 </div>
 <div class="section level3">
 <h3 id="comfy-stuff">Comfy Stuff<a class="anchor" aria-label="anchor" href="#comfy-stuff"></a>
 </h3>
-<p>trustmebro also comes with a few functions which make our day-to-day business about messy data more comfortable. If you want to be comfy while loading and recoding data, take a look at <code>vignette(trustmebro::Get_data_matchready)</code>.</p>
-<!-- badges: start -->
-
+<p>trustmebro also comes with a few functions which make our day-to-day business about messy data more comfortable. If you want to be comfy while loading and recoding data, take a look at <code>vignette(trustmebro::get_data_matchready)</code>.</p>
+</div>
+<div class="section level3">
+<h3 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h3>
+<p>While trustmebro is not yet available on CRAN, we’re actively working towards its release there. In the meantime, you can easily install the latest development version directly from GitHub. To do this, you’ll need the remotes package. If you don’t have it already, install it with</p>
+<p><code>{r install_remotes, message=FALSE} install.packages("remotes")</code></p>
+<p>Then, use the following command to install trustmebro</p>
+<p><code>{r install_trustmebro, message=FALSE} remotes::install_github("kuuuwe/trustmebro")</code></p>
+<p>This will download and install the package and its dependencies. Keep an eye out for our CRAN release, which will simplify installation in the future.</p>
+</div>
+<div class="section level3">
+<h3 id="getting-help">Getting Help<a class="anchor" aria-label="anchor" href="#getting-help"></a>
+</h3>
+<p>If you run into a bug, the best way to get help is to create a new issue on the package’s <a href="https://github.com/kuuuwe/trustmebro" title="https://github.com/kuuuwe/trustmebro" class="external-link">GitHub page</a>, describing the problem and including the code you were using. If you’re not comfortable with GitHub, you can also contact the developers, making sure to explain what happened and what you were trying to do.</p>
+</div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="license">
