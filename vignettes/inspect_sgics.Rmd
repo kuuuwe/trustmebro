@@ -4,7 +4,7 @@ output: rmarkdown::html_vignette
 description: >
   This vingette shows you how to use the package for checking SGIcs and related survey data on plausibility
 vignette: >
-  %\VignetteIndexEntry{Inspect_SGICs}
+  %\VignetteIndexEntry{inspect_sgics}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
