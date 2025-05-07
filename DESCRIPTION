@@ -1,7 +1,7 @@
 Package: trustmebro
 Type: Package
 Title: Inspect and Clean Subject-Generated ID Codes and Related Data
-Version: 0.1.0
+Version: 1.0.0
 Authors@R: c(
     person("Annemarie", "Pläschke", , "anneplaeschke@gmail.com", role = c("aut", "cre", "cph"),
       comment = c(ORCID = "0009-0005-7115-8790")
