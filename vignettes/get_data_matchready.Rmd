@@ -24,23 +24,16 @@ We\`ll start by loading trustmebro:
 library(trustmebro)
 ```
 
-# Load key data
+# Data
 
 Our key data set `trustmebro::sailor_keys` is a longitudinal data set in long format. It is a tibble with `r nrow(sailor_keys)` rows and `r ncol(sailor_keys)` columns.
 
-To link this key data to survey data collected at a certain time with certain characteristics, we don't want to load the whole dataset in our environment. To only load in our environment what we really need, we can use `trustmebro::summon_data` to select variables and filter rows:
+This data should be linked with our survey data `trustmebro::sailor_students`, a tibble with `r nrow(sailor_students)` rows and `r ncol(sailor_students)` columns.
 
-```{r, eval = FALSE}
-summon_data(filepath = "my/path/keydata.rds",
-             selection = c(guid, schoolnumber, grade_level, class_designation, birthday, sex, sgic1),
-             schoolyear == 2324,
-             grade_level == 10)
-```
+Let us take a quick look at the survey data:
 
-This data should be linked with our survey data `trustmebro::sailor_students`, a tibble with `r nrow(sailor_students)` rows and `r ncol(sailor_students)` columns. This data is loaded:
-
-```{r, eval = FALSE}
-summon_data(filepath = "my/path/sailor_students.rds")
+```{r}
+print(trustmebro::sailor_students)
 ```
 
 # Replace non-alphanumeric characters you don't want to deal with
