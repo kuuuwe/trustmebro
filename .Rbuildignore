@@ -8,3 +8,6 @@
 ^LICENSE\.md$
 ^doc$
 ^Meta$
+^cran-comments\.md$
+^README\.Rmd$
+^CRAN-SUBMISSION$

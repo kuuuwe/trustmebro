@@ -1,20 +1,19 @@
 Package: trustmebro
 Type: Package
-Title: inspect and clean SGIC-related data
-Version: 0.1.0
+Title: Inspect and Clean Subject-Generated ID Codes and Related Data
+Version: 1.0.0.9000
 Authors@R: c(
-    person("Annemarie", "Pläschke", , "annemarie.plaeschke@ifbq.hamburg.de", role = c("aut", "cre"),
+    person("Annemarie", "Pläschke", , "anneplaeschke@gmail.com", role = c("aut", "cre", "cph"),
       comment = c(ORCID = "0009-0005-7115-8790")
     ),
     person("Tobias", "Brändle", role = "aut",
       comment = c(ORCID = "0000-0001-8872-9872")
     )
   )
-Maintainer: Annemarie Pläschke <annemarie.plaeschke@ifbq.hamburg.de>
-Description: trustmebro is designed to make data wrangling with ID-related aspects more comfortable.
-  This package provides functions that make it easy to inspect various subject-generated ID codes (SGIC) for plausibility.
-  It also helps with inspecting other common identifiers, ensuring that your data stays clean and reliable.
-  Beyond plausibility checks, trustmebro offers a few tools for smooth data import and convenient recoding.
+Maintainer: Annemarie Pläschke <anneplaeschke@gmail.com>
+Description: Makes data wrangling with ID-related aspects more comfortable.
+    Provides functions that make it easy to inspect various subject-generated ID codes (SGIC) for plausibility.
+    Also helps with inspecting other common identifiers, ensuring that your data stays clean and reliable.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -32,6 +31,6 @@ Imports:
     tibble,
     rlang
 VignetteBuilder: knitr
-URL: https://kuuuwe.github.io/trustmebro/
+URL: https://kuuuwe.github.io/trustmebro/, https://github.com/kuuuwe/trustmebro
 Language: en-US
-
+BugReports: https://github.com/kuuuwe/trustmebro/issues
