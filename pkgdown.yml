@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   get_data_matchready: get_data_matchready.html
   inspect_sgics: inspect_sgics.html
-last_built: 2025-05-09T23:09Z
+last_built: 2025-05-09T23:19Z
 urls:
   reference: https://kuuuwe.github.io/trustmebro/reference
   article: https://kuuuwe.github.io/trustmebro/articles
